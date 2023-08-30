@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		8706AB782A9FBE9C007D6DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706AB772A9FBE9C007D6DA4 /* AppDelegate.swift */; };
 		8706AB7A2A9FBE9C007D6DA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706AB792A9FBE9C007D6DA4 /* SceneDelegate.swift */; };
-		8706AB7C2A9FBE9C007D6DA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706AB7B2A9FBE9C007D6DA4 /* ViewController.swift */; };
-		8706AB7F2A9FBE9C007D6DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8706AB7D2A9FBE9C007D6DA4 /* Main.storyboard */; };
+		8706AB7C2A9FBE9C007D6DA4 /* ViewOnBorading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706AB7B2A9FBE9C007D6DA4 /* ViewOnBorading.swift */; };
 		8706AB812A9FBE9D007D6DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8706AB802A9FBE9D007D6DA4 /* Assets.xcassets */; };
 		8706AB842A9FBE9D007D6DA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8706AB822A9FBE9D007D6DA4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,8 +18,7 @@
 		8706AB742A9FBE9C007D6DA4 /* TehnoleasingCabinet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TehnoleasingCabinet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8706AB772A9FBE9C007D6DA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8706AB792A9FBE9C007D6DA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8706AB7B2A9FBE9C007D6DA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8706AB7E2A9FBE9C007D6DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8706AB7B2A9FBE9C007D6DA4 /* ViewOnBorading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOnBorading.swift; sourceTree = "<group>"; };
 		8706AB802A9FBE9D007D6DA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8706AB832A9FBE9D007D6DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8706AB852A9FBE9D007D6DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +54,46 @@
 		8706AB762A9FBE9C007D6DA4 /* TehnoleasingCabinet */ = {
 			isa = PBXGroup;
 			children = (
-				8706AB772A9FBE9C007D6DA4 /* AppDelegate.swift */,
-				8706AB792A9FBE9C007D6DA4 /* SceneDelegate.swift */,
-				8706AB7B2A9FBE9C007D6DA4 /* ViewController.swift */,
-				8706AB7D2A9FBE9C007D6DA4 /* Main.storyboard */,
+				8706AB8E2A9FCCB9007D6DA4 /* Support */,
+				8706AB8D2A9FCCB2007D6DA4 /* Controller */,
+				8706AB8C2A9FCCA9007D6DA4 /* View */,
+				8706AB8B2A9FCC9C007D6DA4 /* Model */,
 				8706AB802A9FBE9D007D6DA4 /* Assets.xcassets */,
-				8706AB822A9FBE9D007D6DA4 /* LaunchScreen.storyboard */,
 				8706AB852A9FBE9D007D6DA4 /* Info.plist */,
 			);
 			path = TehnoleasingCabinet;
+			sourceTree = "<group>";
+		};
+		8706AB8B2A9FCC9C007D6DA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8706AB8C2A9FCCA9007D6DA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8706AB8D2A9FCCB2007D6DA4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8706AB7B2A9FBE9C007D6DA4 /* ViewOnBorading.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8706AB8E2A9FCCB9007D6DA4 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				8706AB772A9FBE9C007D6DA4 /* AppDelegate.swift */,
+				8706AB792A9FBE9C007D6DA4 /* SceneDelegate.swift */,
+				8706AB822A9FBE9D007D6DA4 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +156,6 @@
 			files = (
 				8706AB842A9FBE9D007D6DA4 /* LaunchScreen.storyboard in Resources */,
 				8706AB812A9FBE9D007D6DA4 /* Assets.xcassets in Resources */,
-				8706AB7F2A9FBE9C007D6DA4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8706AB7C2A9FBE9C007D6DA4 /* ViewController.swift in Sources */,
+				8706AB7C2A9FBE9C007D6DA4 /* ViewOnBorading.swift in Sources */,
 				8706AB782A9FBE9C007D6DA4 /* AppDelegate.swift in Sources */,
 				8706AB7A2A9FBE9C007D6DA4 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +175,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8706AB7D2A9FBE9C007D6DA4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8706AB7E2A9FBE9C007D6DA4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8706AB822A9FBE9D007D6DA4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,9 +312,9 @@
 				INFOPLIST_FILE = TehnoleasingCabinet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,9 +340,9 @@
 				INFOPLIST_FILE = TehnoleasingCabinet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
