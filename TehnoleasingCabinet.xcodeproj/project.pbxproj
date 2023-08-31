@@ -12,6 +12,8 @@
 		8706AB7C2A9FBE9C007D6DA4 /* ViewOnBorading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706AB7B2A9FBE9C007D6DA4 /* ViewOnBorading.swift */; };
 		8706AB812A9FBE9D007D6DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8706AB802A9FBE9D007D6DA4 /* Assets.xcassets */; };
 		8706AB842A9FBE9D007D6DA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8706AB822A9FBE9D007D6DA4 /* LaunchScreen.storyboard */; };
+		8706AB902AA07B23007D6DA4 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706AB8F2AA07B23007D6DA4 /* OnBoardingView.swift */; };
+		8706AB922AA0D617007D6DA4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706AB912AA0D617007D6DA4 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		8706AB802A9FBE9D007D6DA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8706AB832A9FBE9D007D6DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8706AB852A9FBE9D007D6DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8706AB8F2AA07B23007D6DA4 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		8706AB912AA0D617007D6DA4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		8706AB8C2A9FCCA9007D6DA4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8706AB8F2AA07B23007D6DA4 /* OnBoardingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -82,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				8706AB7B2A9FBE9C007D6DA4 /* ViewOnBorading.swift */,
+				8706AB912AA0D617007D6DA4 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,8 +173,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8706AB7C2A9FBE9C007D6DA4 /* ViewOnBorading.swift in Sources */,
+				8706AB902AA07B23007D6DA4 /* OnBoardingView.swift in Sources */,
 				8706AB782A9FBE9C007D6DA4 /* AppDelegate.swift in Sources */,
 				8706AB7A2A9FBE9C007D6DA4 /* SceneDelegate.swift in Sources */,
+				8706AB922AA0D617007D6DA4 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
