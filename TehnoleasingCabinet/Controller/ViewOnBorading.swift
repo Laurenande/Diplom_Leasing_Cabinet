@@ -42,7 +42,7 @@ class ViewOnBorading: UIViewController {
         button.setTitleColor(.white,
                              for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.1129455492, green: 0.2492182851, blue: 0.3852708042, alpha: 1)
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 12
         button.layer.opacity = 0
         button.addTarget(self,
                          action: #selector(buttonAction),
@@ -56,7 +56,6 @@ class ViewOnBorading: UIViewController {
         super.viewDidLoad()
         setViews()
         setConstraints()
-        setDelegates()
         
         sliders = createSlides()
         setupSlideScrollView(slides: sliders)
@@ -79,9 +78,6 @@ class ViewOnBorading: UIViewController {
         view.addSubview(buttonFinal)
     }
     
-    private func setDelegates(){
-        
-    }
     
     private func createSlides() -> [OnBoardingView]{
         let firstOnboardingView = OnBoardingView()
