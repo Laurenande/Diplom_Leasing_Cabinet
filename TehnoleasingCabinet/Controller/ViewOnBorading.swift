@@ -34,20 +34,10 @@ class ViewOnBorading: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    private let buttonFinal: UIButton = {
-        let button = UIButton(type: .system)
-        //button.frame.size = CGSize(width: 100, height: 100)
-        button.setTitle("Продолжить",
-                        for: .normal)
-        button.setTitleColor(.white,
-                             for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.1129455492, green: 0.2492182851, blue: 0.3852708042, alpha: 1)
-        button.layer.cornerRadius = 12
-        button.layer.opacity = 0
-        button.addTarget(self,
-                         action: #selector(buttonAction),
-                         for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
+    private let buttonFinal: TehnoBlueButton = {
+        let button = TehnoBlueButton(title: "Продолжить")
+        button.alpha = 0
+        button.addTarget(self,action: #selector(buttonAction),for: .touchUpInside)
         return button
     }()
     private var sliders = [OnBoardingView]()
@@ -60,13 +50,16 @@ class ViewOnBorading: UIViewController {
         sliders = createSlides()
         setupSlideScrollView(slides: sliders)
         scrollView.delegate = self
-        
-               
+           
     }
     
     @objc
        func buttonAction() {
-           print("lox")
+           let VCReg = LoginVC()
+           VCReg.modalPresentationStyle = .fullScreen
+           VCReg.modalTransitionStyle = .coverVertical
+           present(VCReg, animated: true, completion: nil)
+
        }
     
     private func setViews(){

@@ -12,6 +12,7 @@ class CheckBoxButton: UIButton {
         super.init(frame: frame)
         setupButton()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

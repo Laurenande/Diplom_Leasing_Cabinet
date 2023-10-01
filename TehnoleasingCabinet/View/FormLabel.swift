@@ -20,6 +20,7 @@ class FormLabel: UILabel {
     
     private func setupLabel(textInit: String) {
         text = textInit
+        font = UIFont.systemFont(ofSize: 15)
         textColor = .black
         textAlignment = .left
         numberOfLines = 1

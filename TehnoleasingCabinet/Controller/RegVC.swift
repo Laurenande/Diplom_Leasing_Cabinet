@@ -29,20 +29,9 @@ class RegVC: UIViewController {
         return label
     }()
     
-    private let sendKod: UIButton = {
-        let button = UIButton(type: .system)
-        //button.frame.size = CGSize(width: 100, height: 100)
-        button.setTitle("Отправить код",
-                        for: .normal)
-        button.setTitleColor(.white,
-                             for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.1129455492, green: 0.2492182851, blue: 0.3852708042, alpha: 1)
-        button.layer.cornerRadius = 14
-        button.addTarget(self,
-                         action: #selector(buttonActionSendSMS),
-                         for: .touchUpInside)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
+    private let sendKod: TehnoBlueButton = {
+        let button = TehnoBlueButton(title: "Отправить код")
+        button.addTarget(self, action: #selector(buttonActionSendSMS), for: .touchUpInside)
         return button
     }()
     //Create form element
@@ -94,14 +83,13 @@ class RegVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setViews()
         setConstraints()
         initializeHideKeyboard()
         // Do any additional setup after loading the view.
     }
     @objc func buttonActionSendSMS() {
-           print("lox")
+        
     }
     
 

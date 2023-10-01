@@ -9,29 +9,16 @@ import UIKit
 
 class LoginVC: UIViewController {
 
-    private let buttonLogin: UIButton = {
-        let button = UIButton(type: .system)
-        //button.frame.size = CGSize(width: 100, height: 100)
-        button.setTitle("Вход",
-                        for: .normal)
-        button.setTitleColor(.white,
-                             for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.1129455492, green: 0.2492182851, blue: 0.3852708042, alpha: 1)
-        button.layer.cornerRadius = 14
-        button.addTarget(self,
-                         action: #selector(buttonActionLogin),
-                         for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
+    private let buttonLogin: TehnoBlueButton = {
+        let button = TehnoBlueButton(title: "Вход")
+        button.addTarget(self, action: #selector(buttonActionLogin), for: .touchUpInside)
         return button
     }()
     
     private let buttonReg: UIButton = {
         let button = UIButton(type: .system)
-        //button.frame.size = CGSize(width: 100, height: 100)
-        button.setTitle("Регистрация",
-                        for: .normal)
-        button.setTitleColor(.white,
-                             for: .normal)
+        button.setTitle("Регистрация", for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.77, green: 0.0077, blue: 0.020405, alpha: 1)
         button.layer.cornerRadius = 14
         button.addTarget(self,
@@ -60,31 +47,10 @@ class LoginVC: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    //Form Login
+    private let phoneLabel = FormLabel(text: "Номер телефона")
+    private let phoneTextfield = CustomTextField(placeholder: "+7 (999) 999-99-99", keyboard: .number)
     
-    private let phoneLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .left
-        label.numberOfLines = 1
-        label.frame.size = CGSize(width: 100, height: 200)
-        label.text = "Номер телефона"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let phoneTextfield: UITextField = {
-        let textField = UITextField()
-        textField.font = UIFont.systemFont(ofSize: 13)
-        textField.frame.size = CGSize(width: 200, height: 300)
-        textField.placeholder = "+7 (999) 999-99-99"
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
-        textField.autocorrectionType = UITextAutocorrectionType.no
-        textField.keyboardType = UIKeyboardType.asciiCapableNumberPad
-        textField.returnKeyType = UIReturnKeyType.go
-        textField.clearButtonMode = UITextField.ViewMode.whileEditing
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        return textField
-    }()
     let stack = UIStackView()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,11 +77,15 @@ class LoginVC: UIViewController {
         view.addSubview(stack)
     }
     @objc func buttonActionLogin() {
-           print("lox")
+        let VCSendSms = LoginCodeVC()
+        VCSendSms.modalPresentationStyle = .fullScreen
+        show(VCSendSms, sender: self)
     }
     
     @objc func buttonActionReg() {
-           print("lox")
+        let VCReg = RegVC()
+        VCReg.modalPresentationStyle = .fullScreen
+        present(VCReg, animated: true, completion: nil)
        }
 
     /*
