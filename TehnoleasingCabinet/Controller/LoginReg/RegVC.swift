@@ -29,7 +29,7 @@ class RegVC: UIViewController {
         return label
     }()
     
-    private let sendKod: TehnoBlueButton = {
+    private lazy var sendKod: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Отправить код")
         button.addTarget(self, action: #selector(buttonActionSendSMS), for: .touchUpInside)
         return button

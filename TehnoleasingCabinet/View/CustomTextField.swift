@@ -5,13 +5,13 @@
 //  Created by Егор Куракин on 03.09.2023.
 //
 import UIKit
-enum typeKey {
+enum typeKey1 {
     case number
     case adc
 }
 class CustomTextField: UITextField {
     
-    init(placeholder:String, keyboard: typeKey){
+    init(placeholder:String, keyboard: typeKey1){
         super.init(frame: .zero)
         setupTextFiled(text: placeholder, keyboard: keyboard)
     }
@@ -20,7 +20,7 @@ class CustomTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupTextFiled(text: String, keyboard: typeKey) {
+    private func setupTextFiled(text: String, keyboard: typeKey1) {
         if keyboard == .adc{
             keyboardType = UIKeyboardType.default
         }else{

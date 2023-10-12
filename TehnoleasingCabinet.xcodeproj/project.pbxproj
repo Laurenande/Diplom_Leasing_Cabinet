@@ -18,16 +18,22 @@
 		8754F8422AA4936F008F4596 /* RegVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F8412AA4936F008F4596 /* RegVC.swift */; };
 		8754F8442AA4A755008F4596 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F8432AA4A755008F4596 /* CheckBoxButton.swift */; };
 		8754F86C2AA4BB34008F4596 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F86B2AA4BB34008F4596 /* ViewController.swift */; };
+		87789A6A2ACD7FAE002FDE0C /* AgentFormPhysical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87789A692ACD7FAE002FDE0C /* AgentFormPhysical.swift */; };
+		87789A6D2ACEE62D002FDE0C /* BidStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */; };
+		87789A6F2ACEF3CF002FDE0C /* BidStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */; };
 		87800C3B2AB23FCD005AFBCF /* LoginCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800C3A2AB23FCD005AFBCF /* LoginCodeVC.swift */; };
 		87B1CE142AA4CD5F002F72B9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B1CE132AA4CD5F002F72B9 /* CustomTextField.swift */; };
 		87B1CE162AA4CE8D002F72B9 /* FormLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B1CE152AA4CE8D002F72B9 /* FormLabel.swift */; };
 		87B1CE182AA4DFC5002F72B9 /* AskLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B1CE172AA4DFC5002F72B9 /* AskLabel.swift */; };
 		87B1CE1A2AA4F3C4002F72B9 /* TehnoBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B1CE192AA4F3C4002F72B9 /* TehnoBlueButton.swift */; };
+		87EA8F8A2AD421CE00331A32 /* BidStep4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA8F892AD421CE00331A32 /* BidStep4VC.swift */; };
+		87EA8F8C2AD424AE00331A32 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA8F8B2AD424AE00331A32 /* RadioButton.swift */; };
 		87EE7B0F2AC6BE1B00161D9F /* AgentContractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EE7B0E2AC6BE1B00161D9F /* AgentContractVC.swift */; };
 		87EE7B112AC6BEB900161D9F /* MyBidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EE7B102AC6BEB900161D9F /* MyBidVC.swift */; };
 		87EE7B152AC6BFC500161D9F /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EE7B142AC6BFC500161D9F /* TabController.swift */; };
 		87EE7B1A2AC723D500161D9F /* TarrifBidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EE7B192AC723D400161D9F /* TarrifBidVC.swift */; };
 		87EE7B1C2AC9A1DE00161D9F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EE7B1B2AC9A1DE00161D9F /* ProfileVC.swift */; };
+		87EE7B1E2ACC5B1E00161D9F /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EE7B1D2ACC5B1E00161D9F /* NSMutableAttributedString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,16 +50,22 @@
 		8754F8412AA4936F008F4596 /* RegVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegVC.swift; sourceTree = "<group>"; };
 		8754F8432AA4A755008F4596 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		8754F86B2AA4BB34008F4596 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		87789A692ACD7FAE002FDE0C /* AgentFormPhysical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentFormPhysical.swift; sourceTree = "<group>"; };
+		87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidStep2VC.swift; sourceTree = "<group>"; };
+		87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidStep3VC.swift; sourceTree = "<group>"; };
 		87800C3A2AB23FCD005AFBCF /* LoginCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCodeVC.swift; sourceTree = "<group>"; };
 		87B1CE132AA4CD5F002F72B9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		87B1CE152AA4CE8D002F72B9 /* FormLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabel.swift; sourceTree = "<group>"; };
 		87B1CE172AA4DFC5002F72B9 /* AskLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskLabel.swift; sourceTree = "<group>"; };
 		87B1CE192AA4F3C4002F72B9 /* TehnoBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TehnoBlueButton.swift; sourceTree = "<group>"; };
+		87EA8F892AD421CE00331A32 /* BidStep4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidStep4VC.swift; sourceTree = "<group>"; };
+		87EA8F8B2AD424AE00331A32 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		87EE7B0E2AC6BE1B00161D9F /* AgentContractVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentContractVC.swift; sourceTree = "<group>"; };
 		87EE7B102AC6BEB900161D9F /* MyBidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBidVC.swift; sourceTree = "<group>"; };
 		87EE7B142AC6BFC500161D9F /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		87EE7B192AC723D400161D9F /* TarrifBidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarrifBidVC.swift; sourceTree = "<group>"; };
 		87EE7B1B2AC9A1DE00161D9F /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		87EE7B1D2ACC5B1E00161D9F /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +124,7 @@
 				87B1CE152AA4CE8D002F72B9 /* FormLabel.swift */,
 				87B1CE172AA4DFC5002F72B9 /* AskLabel.swift */,
 				87B1CE192AA4F3C4002F72B9 /* TehnoBlueButton.swift */,
+				87EA8F8B2AD424AE00331A32 /* RadioButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,14 +132,11 @@
 		8706AB8D2A9FCCB2007D6DA4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				87789A6B2ACEE234002FDE0C /* LoginReg */,
 				87EE7B162AC7061A00161D9F /* Tariff */,
 				87EE7B0D2AC6BDE000161D9F /* AgentDogovor */,
 				8706AB7B2A9FBE9C007D6DA4 /* ViewOnBorading.swift */,
-				8706AB912AA0D617007D6DA4 /* LoginVC.swift */,
-				8754F8412AA4936F008F4596 /* RegVC.swift */,
 				8754F86B2AA4BB34008F4596 /* ViewController.swift */,
-				87800C3A2AB23FCD005AFBCF /* LoginCodeVC.swift */,
-				87EE7B102AC6BEB900161D9F /* MyBidVC.swift */,
 				87EE7B142AC6BFC500161D9F /* TabController.swift */,
 				87EE7B1B2AC9A1DE00161D9F /* ProfileVC.swift */,
 			);
@@ -148,14 +158,26 @@
 			isa = PBXGroup;
 			children = (
 				8754F83F2AA4924D008F4596 /* TextFieldExtension.swift */,
+				87EE7B1D2ACC5B1E00161D9F /* NSMutableAttributedString.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		87789A6B2ACEE234002FDE0C /* LoginReg */ = {
+			isa = PBXGroup;
+			children = (
+				87800C3A2AB23FCD005AFBCF /* LoginCodeVC.swift */,
+				8706AB912AA0D617007D6DA4 /* LoginVC.swift */,
+				8754F8412AA4936F008F4596 /* RegVC.swift */,
+			);
+			path = LoginReg;
 			sourceTree = "<group>";
 		};
 		87EE7B0D2AC6BDE000161D9F /* AgentDogovor */ = {
 			isa = PBXGroup;
 			children = (
 				87EE7B0E2AC6BE1B00161D9F /* AgentContractVC.swift */,
+				87789A692ACD7FAE002FDE0C /* AgentFormPhysical.swift */,
 			);
 			path = AgentDogovor;
 			sourceTree = "<group>";
@@ -163,7 +185,11 @@
 		87EE7B162AC7061A00161D9F /* Tariff */ = {
 			isa = PBXGroup;
 			children = (
+				87EE7B102AC6BEB900161D9F /* MyBidVC.swift */,
 				87EE7B192AC723D400161D9F /* TarrifBidVC.swift */,
+				87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */,
+				87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */,
+				87EA8F892AD421CE00331A32 /* BidStep4VC.swift */,
 			);
 			path = Tariff;
 			sourceTree = "<group>";
@@ -239,13 +265,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				87B1CE182AA4DFC5002F72B9 /* AskLabel.swift in Sources */,
+				87789A6D2ACEE62D002FDE0C /* BidStep2VC.swift in Sources */,
 				87EE7B152AC6BFC500161D9F /* TabController.swift in Sources */,
+				87789A6F2ACEF3CF002FDE0C /* BidStep3VC.swift in Sources */,
 				87B1CE1A2AA4F3C4002F72B9 /* TehnoBlueButton.swift in Sources */,
 				87EE7B1C2AC9A1DE00161D9F /* ProfileVC.swift in Sources */,
 				8754F8422AA4936F008F4596 /* RegVC.swift in Sources */,
 				8706AB7C2A9FBE9C007D6DA4 /* ViewOnBorading.swift in Sources */,
 				8754F8442AA4A755008F4596 /* CheckBoxButton.swift in Sources */,
+				87789A6A2ACD7FAE002FDE0C /* AgentFormPhysical.swift in Sources */,
 				8754F86C2AA4BB34008F4596 /* ViewController.swift in Sources */,
+				87EE7B1E2ACC5B1E00161D9F /* NSMutableAttributedString.swift in Sources */,
 				87EE7B112AC6BEB900161D9F /* MyBidVC.swift in Sources */,
 				87B1CE162AA4CE8D002F72B9 /* FormLabel.swift in Sources */,
 				87B1CE142AA4CD5F002F72B9 /* CustomTextField.swift in Sources */,
@@ -253,8 +283,10 @@
 				8706AB782A9FBE9C007D6DA4 /* AppDelegate.swift in Sources */,
 				8754F8402AA4924D008F4596 /* TextFieldExtension.swift in Sources */,
 				87EE7B0F2AC6BE1B00161D9F /* AgentContractVC.swift in Sources */,
+				87EA8F8A2AD421CE00331A32 /* BidStep4VC.swift in Sources */,
 				8706AB7A2A9FBE9C007D6DA4 /* SceneDelegate.swift in Sources */,
 				8706AB922AA0D617007D6DA4 /* LoginVC.swift in Sources */,
+				87EA8F8C2AD424AE00331A32 /* RadioButton.swift in Sources */,
 				87EE7B1A2AC723D500161D9F /* TarrifBidVC.swift in Sources */,
 				87800C3B2AB23FCD005AFBCF /* LoginCodeVC.swift in Sources */,
 			);

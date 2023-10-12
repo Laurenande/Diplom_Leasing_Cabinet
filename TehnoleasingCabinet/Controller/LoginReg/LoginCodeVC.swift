@@ -52,7 +52,7 @@ class LoginCodeVC: UIViewController {
         return textField
     }()
     
-    private let nextButton: TehnoBlueButton = {
+    private lazy var nextButton: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Войти")
         button.alpha = 0.5
         button.isEnabled = false

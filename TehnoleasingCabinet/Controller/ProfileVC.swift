@@ -51,11 +51,15 @@ class ProfileVC: UIViewController {
          return textfield
     }()
     
-    private let contractButton: TehnoBlueButton = {
+    private lazy var contractButton: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Договор")
+        button.addTarget(self,action: #selector(buttonAction),for: .touchUpInside)
         return button
     }()
-    
+    @objc func buttonAction() {
+        let VCReg = AgentContractVC()
+        navigationController?.pushViewController(VCReg, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +100,8 @@ extension ProfileVC{
             contractButton.topAnchor.constraint(equalTo: formStack.bottomAnchor, constant: 50),
             contractButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70),
             contractButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
-            contractButton.heightAnchor.constraint(equalToConstant: 50),
+            contractButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }
+

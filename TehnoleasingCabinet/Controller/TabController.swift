@@ -31,8 +31,11 @@ class TabController: UITabBarController {
         
         nav.tabBarItem.title = title
         nav.tabBarItem.image = image
-        
-        
+        // correct the transparency bug for Tab bars
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+
         return nav
     }
 

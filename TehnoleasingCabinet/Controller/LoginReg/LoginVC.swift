@@ -9,13 +9,13 @@ import UIKit
 
 class LoginVC: UIViewController {
 
-    private let buttonLogin: TehnoBlueButton = {
+    private lazy var buttonLogin: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Вход")
         button.addTarget(self, action: #selector(buttonActionLogin), for: .touchUpInside)
         return button
     }()
     
-    private let buttonReg: UIButton = {
+    private lazy var buttonReg: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Регистрация", for: .normal)
         button.setTitleColor(.white, for: .normal)

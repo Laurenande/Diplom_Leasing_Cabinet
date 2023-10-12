@@ -34,7 +34,7 @@ class ViewOnBorading: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    private let buttonFinal: TehnoBlueButton = {
+    private lazy var buttonFinal: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Продолжить")
         button.alpha = 0
         button.addTarget(self,action: #selector(buttonAction),for: .touchUpInside)
