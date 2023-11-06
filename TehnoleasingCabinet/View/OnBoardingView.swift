@@ -22,6 +22,7 @@ class OnBoardingView: UIView {
     private let pageImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "gear")
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -41,7 +42,9 @@ class OnBoardingView: UIView {
     public func setLabelText(text: String){
         pageLabel.text = text
     }
-    
+    public func setImageBoard(image: String){
+        pageImage.image = UIImage(named: image)
+    }
     public func setPageLabelTrasfor(trasform: CGAffineTransform){
         pageLabel.transform = trasform
         pageImage.transform = trasform
@@ -49,17 +52,21 @@ class OnBoardingView: UIView {
     
     private func setConstraints(){
         NSLayoutConstraint.activate([
-            pageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            pageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            //pageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            pageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -200),
-            pageLabel.heightAnchor.constraint(equalToConstant: 200),
-            
+            pageImage.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             pageImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             pageImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             //pageImage.centerYAnchor.constraint(equalTo: centerYAnchor),
-            pageImage.topAnchor.constraint(equalTo: topAnchor, constant: 150),
-            pageImage.heightAnchor.constraint(equalToConstant: 300)
+            pageImage.heightAnchor.constraint(equalToConstant: 300),
+            pageImage.bottomAnchor.constraint(equalTo: pageLabel.topAnchor, constant: 0),
+            
+            pageLabel.topAnchor.constraint(equalTo: pageImage.bottomAnchor, constant: 0),
+            
+            pageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            pageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            //pageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            //pageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -200),
+            pageLabel.heightAnchor.constraint(equalToConstant: 100),
+            
         ])
     }
 }

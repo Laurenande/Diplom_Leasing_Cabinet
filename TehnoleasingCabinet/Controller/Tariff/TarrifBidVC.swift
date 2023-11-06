@@ -23,12 +23,16 @@ class TarrifBidVC: UIViewController{
         return view
     }()
     
-    private let newBidButton: TehnoBlueButton = {
+    private lazy var newBidButton: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Составить заявку")
-
+        button.addTarget(self,action: #selector(buttonAction),for: .touchUpInside)
         return button
     }()
-    
+    @objc func buttonAction() {
+        let VCBid = MyBidVC()
+        newBidButton.zoomInWithEasing()
+        navigationController?.pushViewController(VCBid, animated: true)
+    }
     private var infoCollection: UICollectionView = {
         let lay = UICollectionViewFlowLayout()
         lay.scrollDirection = .vertical

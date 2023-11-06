@@ -60,6 +60,7 @@ class BidStep2VC: UIViewController {
     }()
     @objc func buttonAction() {
         let VCReg = BidStep3VC()
+        nextButton.zoomInWithEasing()
         navigationController?.pushViewController(VCReg, animated: true)
     }
     

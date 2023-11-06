@@ -95,7 +95,18 @@ class AgentContractVC: UIViewController {
         return button
     }()
     @objc func buttonAction() {
-        let VCReg = AgentFormPhysical()
+        var VCReg = UIViewController()
+        switch contractTextfield.text {
+        case "Физ. Лицо":
+            VCReg = AgentFormPhysical()
+        case "ИП":
+            VCReg = AgentFromIPVC()
+        case "Юр. Лицо":
+            VCReg = AgentFromURVC()
+        default:
+            VCReg = AgentFromIPVC()
+        }
+        confirmButton.zoomInWithEasing()
         navigationController?.pushViewController(VCReg, animated: true)
     }
     

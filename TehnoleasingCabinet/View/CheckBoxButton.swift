@@ -18,8 +18,8 @@ class CheckBoxButton: UIButton {
     }
     
     func setupButton() {
-        setImage(UIImage(named: "ic_check_box"), for: .normal)
-        frame.size = CGSize(width: 40, height: 40)
+        setImage(UIImage(named: "checkBox_off"), for: .normal)
+        frame.size = CGSize(width: 20, height: 20)
         addTarget(self,
                   action: #selector(buttonActionSendSMS),
                   for: .touchUpInside)
@@ -27,9 +27,9 @@ class CheckBoxButton: UIButton {
     @objc func buttonActionSendSMS() {
         isSelected = !isSelected
         if isSelected{
-            setImage(UIImage(named: "ic_check_box_outline_blank"), for: .selected)
+            setImage(UIImage(named: "checkBox_on"), for: .selected)
         }else{
-            setImage(UIImage(named: "ic_check_box"), for: .normal)
+            setImage(UIImage(named: "checkBox_off"), for: .normal)
         }
     }
 }

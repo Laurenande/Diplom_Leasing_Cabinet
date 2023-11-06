@@ -56,6 +56,7 @@ class MyBidVC: UIViewController {
     }()
     @objc func buttonAction() {
         let VCReg = BidStep2VC()
+        nextButton.zoomInWithEasing()
         navigationController?.pushViewController(VCReg, animated: true)
     }
     override func viewDidLoad() {

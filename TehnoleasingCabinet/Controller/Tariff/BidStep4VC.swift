@@ -18,6 +18,12 @@ class BidStep4VC: UIViewController {
         return scroll
     }()
     
+    private let contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private let formStack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -79,39 +85,22 @@ class BidStep4VC: UIViewController {
         let textview = UITextView()
         textview.contentInsetAdjustmentBehavior = .automatic
         textview.textAlignment = NSTextAlignment.justified
-        textview.backgroundColor = UIColor.tertiarySystemFill
-        
-        
-        // Update UITextView font size and colour
-        //textview.font = UIFont.systemFont(ofSize: 16)
+        textview.backgroundColor = UIColor.white
+        textview.layer.borderColor = UIColor.systemFill.cgColor
+        textview.layer.borderWidth = CGFloat(1)
         textview.textColor = UIColor.black
-        
-        //textview.font = UIFont.boldSystemFont(ofSize: 20)
         textview.font = UIFont(name: "Verdana", size: 17)
-        
-        // Capitalize all characters user types
-        //textview.autocapitalizationType = UITextAutocapitalizationType.allCharacters
-        
-        // Make UITextView web links clickable
         textview.isSelectable = true
         textview.isEditable = false
         textview.dataDetectorTypes = UIDataDetectorTypes.link
-        
-        // Make UITextView corners rounded
         textview.layer.cornerRadius = 10
-        
-        // Enable auto-correction and Spellcheck
         textview.autocorrectionType = UITextAutocorrectionType.yes
         textview.spellCheckingType = UITextSpellCheckingType.yes
-        // myTextView.autocapitalizationType = UITextAutocapitalizationType.None
-        
-        // Make UITextView Editable
         textview.isEditable = true
-        //textview.frame.size.height = CGFloat(40)
         textview.translatesAutoresizingMaskIntoConstraints = false
         return textview
     }()
-    
+    var placeholderLabel : UILabel!
     private let balanceLabel = FormLabel(text: "Баланс клиента за последний отчетный период")
     private let balanceTextfield: CustomTextField = {
         let textfield = CustomTextField(placeholder: "Выберите файл ", keyboard: .adc)
@@ -160,7 +149,7 @@ class BidStep4VC: UIViewController {
     }()
     
     private let managerDownLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Отставив поле пустым, Вы будите закреплены за нашим лучшем специалистом"
         label.font = UIFont.systemFont(ofSize: 10)
         label.sizeToFit()
@@ -170,12 +159,13 @@ class BidStep4VC: UIViewController {
     }()
     
     private lazy var nextButton: TehnoBlueButton = {
-        let button = TehnoBlueButton(title: "Далее")
+        let button = TehnoBlueButton(title: "Отправить")
         button.addTarget(self,action: #selector(buttonAction),for: .touchUpInside)
         return button
     }()
     @objc func buttonAction() {
         let VCReg = AgentContractVC()
+        nextButton.zoomInWithEasing()
         navigationController?.pushViewController(VCReg, animated: true)
     }
     
@@ -184,6 +174,7 @@ class BidStep4VC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationItem.title = "Новая заявка"
+        addPlaceholderTextView()
         setViews()
         setConstraints()
         
@@ -192,9 +183,10 @@ class BidStep4VC: UIViewController {
     
     func setViews() {
         view.addSubview(scrollView)
-        //view.addSubview(nextButton)
-        scrollView.addSubview(formStack)
-        scrollView.addSubview(nextButton)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(formStack)
+        contentView.addSubview(nextButton)
+        
         formStack.addArrangedSubview(sposobLable)
         formStack.addArrangedSubview(radioButton1Stack)
         radioButton1Stack.addArrangedSubview(agentUrFaceButoon)
@@ -218,6 +210,17 @@ class BidStep4VC: UIViewController {
         formStack.addArrangedSubview(managerLabel)
         formStack.addArrangedSubview(managerTextfield)
         formStack.addArrangedSubview(managerDownLabel)
+    }
+    func addPlaceholderTextView() {
+        noteTextView.delegate = self
+        placeholderLabel = UILabel()
+        placeholderLabel.text = "Дополнительная информация"
+        placeholderLabel.font = .systemFont(ofSize: (noteTextView.font?.pointSize)!)
+        placeholderLabel.sizeToFit()
+        noteTextView.addSubview(placeholderLabel)
+        placeholderLabel.frame.origin = CGPoint(x: 5, y: (noteTextView.font?.pointSize)! / 2)
+        placeholderLabel.textColor = .tertiaryLabel
+        placeholderLabel.isHidden = !noteTextView.text.isEmpty
     }
     func openDocumentPicker(tag: Int) {
         let supportedTypes: [UTType] = [UTType.pdf]
@@ -246,7 +249,7 @@ class BidStep4VC: UIViewController {
             agentFisFaceButoon.isSelected = false
             agentIPButoon.isSelected = true
         }
-
+        
     }
     
 }
@@ -258,9 +261,16 @@ extension BidStep4VC{
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            formStack.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-            formStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12),
-            formStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 700),
+            
+            formStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            formStack.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12),
+            formStack.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12),
             
             nextButton.topAnchor.constraint(equalTo: formStack.bottomAnchor, constant: 50),
             nextButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70),
@@ -288,6 +298,17 @@ extension BidStep4VC: UIDocumentPickerDelegate{
                 KPTextfield.text = fileName
             }
         }
+    }
+}
+extension BidStep4VC: UITextViewDelegate{
+    func textViewDidChange(_ textView: UITextView) {
+        placeholderLabel?.isHidden = !textView.text.isEmpty
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        placeholderLabel?.isHidden = !textView.text.isEmpty
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        placeholderLabel?.isHidden = true
     }
 }
 

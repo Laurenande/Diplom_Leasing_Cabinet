@@ -22,7 +22,7 @@ class LoginVC: UIViewController {
         button.backgroundColor = #colorLiteral(red: 0.77, green: 0.0077, blue: 0.020405, alpha: 1)
         button.layer.cornerRadius = 14
         button.addTarget(self,
-                         action: #selector(buttonActionLogin),
+                         action: #selector(buttonActionReg),
                          for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -78,6 +78,7 @@ class LoginVC: UIViewController {
     }
     @objc func buttonActionLogin() {
         let VCSendSms = LoginCodeVC()
+        buttonLogin.zoomInWithEasing()
         VCSendSms.modalPresentationStyle = .fullScreen
         show(VCSendSms, sender: self)
     }

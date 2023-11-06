@@ -64,11 +64,53 @@ class LoginCodeVC: UIViewController {
     @objc
        func buttonAction() {
            let VCReg = TabController()
+           nextButton.zoomInWithEasing()
            VCReg.modalPresentationStyle = .fullScreen
            VCReg.modalTransitionStyle = .coverVertical
            present(VCReg, animated: true, completion: nil)
 
        }
+    
+    private lazy var noSendSMS: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Не приходит СМС?", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.link, for: .normal)
+        button.layer.cornerRadius = 14
+        //button.addTarget(self,
+        //               action: #selector(buttonActionLogin),
+        //             for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private lazy var sendSMSTwo: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Отправить код повторно", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.link, for: .normal)
+        button.layer.cornerRadius = 14
+        //button.addTarget(self,
+        //               action: #selector(buttonActionLogin),
+        //             for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let timerLable: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 15)
+        label.textAlignment = .center
+        label.numberOfLines = 2
+        label.frame.size = CGSize(width: 100, height: 200)
+        //label.text = "Код был отправлен на указанный Вами номер"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    //Properties timer
+    var countdownTimer: Timer!
+    var totalTime = 120
     //private let numberCodeTF1: UITextField
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,9 +118,31 @@ class LoginCodeVC: UIViewController {
         setViews()
         setConstraints()
         initializeHideKeyboard()
+        startTimer()
         // Do any additional setup after loading the view.
     }
-    
+    //MARK: - Settings Timer
+    func startTimer() {
+        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
+    @objc func updateTime() {
+        timerLable.text = "\(timeFormatted(totalTime))"
+        if totalTime != 0 {
+            totalTime -= 1
+        } else {
+            endTimer()
+        }
+    }
+    func endTimer() {
+        countdownTimer.invalidate()
+        sendSMSTwo.isEnabled = true
+        sendSMSTwo.alpha = 1
+    }
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
 
 }
 
@@ -92,6 +156,9 @@ extension LoginCodeVC{
         view.addSubview(titleLabel)
         view.addSubview(subTitleLabel)
         view.addSubview(smsCodeTextFiled)
+        view.addSubview(noSendSMS)
+        view.addSubview(sendSMSTwo)
+        view.addSubview(timerLable)
         view.addSubview(nextButton)
         
 
@@ -123,6 +190,21 @@ extension LoginCodeVC{
             smsCodeTextFiled.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
             smsCodeTextFiled.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
             smsCodeTextFiled.heightAnchor.constraint(equalToConstant: 40),
+            
+            noSendSMS.topAnchor.constraint(equalTo: smsCodeTextFiled.bottomAnchor, constant: 10),
+            noSendSMS.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70),
+            noSendSMS.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
+            noSendSMS.heightAnchor.constraint(equalToConstant: 30),
+            
+            sendSMSTwo.topAnchor.constraint(equalTo: noSendSMS.bottomAnchor, constant: 5),
+            sendSMSTwo.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70),
+            sendSMSTwo.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
+            sendSMSTwo.heightAnchor.constraint(equalToConstant: 30),
+            
+            timerLable.topAnchor.constraint(equalTo: sendSMSTwo.bottomAnchor, constant: 5),
+            timerLable.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70),
+            timerLable.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
+            timerLable.heightAnchor.constraint(equalToConstant: 30),
             
             nextButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70),
             nextButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),

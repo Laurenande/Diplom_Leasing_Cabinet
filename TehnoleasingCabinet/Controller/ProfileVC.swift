@@ -57,7 +57,9 @@ class ProfileVC: UIViewController {
         return button
     }()
     @objc func buttonAction() {
+        contractButton.zoomInWithEasing()
         let VCReg = AgentContractVC()
+        
         navigationController?.pushViewController(VCReg, animated: true)
     }
     
@@ -104,4 +106,5 @@ extension ProfileVC{
         ])
     }
 }
+
 

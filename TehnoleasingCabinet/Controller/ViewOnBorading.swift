@@ -74,10 +74,13 @@ class ViewOnBorading: UIViewController {
     
     private func createSlides() -> [OnBoardingView]{
         let firstOnboardingView = OnBoardingView()
+        firstOnboardingView.setImageBoard(image: "individuol")
         firstOnboardingView.setLabelText(text: "Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке")
         let secondOnboardingView = OnBoardingView()
+        secondOnboardingView.setImageBoard(image: "search")
         secondOnboardingView.setLabelText(text: "Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке")
         let thirdOnboardingView = OnBoardingView()
+        thirdOnboardingView.setImageBoard(image: "best")
         thirdOnboardingView.setLabelText(text: "Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке")
         
         return [firstOnboardingView,secondOnboardingView,thirdOnboardingView]
@@ -136,12 +139,12 @@ extension ViewOnBorading{
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            scrollView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 0),
             scrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
             scrollView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             
-            pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -180),
+            pageControl.bottomAnchor.constraint(equalTo: buttonFinal.topAnchor, constant: -20),
             pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             pageControl.heightAnchor.constraint(equalToConstant: 50),
@@ -153,7 +156,7 @@ extension ViewOnBorading{
             
             buttonFinal.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 100),
             buttonFinal.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -100),
-            buttonFinal.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            buttonFinal.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             buttonFinal.heightAnchor.constraint(equalToConstant: 50)
         ])
     }

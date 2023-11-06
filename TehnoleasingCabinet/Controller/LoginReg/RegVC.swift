@@ -89,7 +89,10 @@ class RegVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     @objc func buttonActionSendSMS() {
-        
+        let VCSendSms = LoginCodeVC()
+        sendKod.zoomInWithEasing()
+        VCSendSms.modalPresentationStyle = .fullScreen
+        show(VCSendSms, sender: self)
     }
     
 

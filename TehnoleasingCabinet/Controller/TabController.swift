@@ -12,7 +12,7 @@ class TabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabs()
-        selectedIndex = 3
+        selectedIndex = 1
         // Do any additional setup after loading the view.
     }
     
@@ -21,8 +21,8 @@ class TabController: UITabBarController {
         let home = createVC(with: "Заявки", and: UIImage(systemName: "list.clipboard"), vc: MyBidVC())
         let profile = createVC(with: "Профиль", and: UIImage(systemName: "person.circle"), vc: ProfileVC())
         let tariff = createVC(with: "Тариф", and: UIImage(systemName: "doc"), vc: TarrifBidVC())
-        let sendMoney = createVC(with: "Выплаты", and: UIImage(systemName: "rublesign.circle"), vc: MyBidVC())
-        let newBid = createVC(with: "Лизинг", and: UIImage(systemName: "tray"), vc: MyBidVC())
+        let sendMoney = createVC(with: "Выплаты", and: UIImage(systemName: "rublesign.circle"), vc: PayVC())
+        let newBid = createVC(with: "Лизинг", and: UIImage(systemName: "plus.circle"), vc: MyBidVC())
         self.setViewControllers([home,sendMoney,newBid,profile,tariff], animated: true)
     }
     
