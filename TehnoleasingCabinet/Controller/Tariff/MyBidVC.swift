@@ -19,13 +19,13 @@ class MyBidVC: UIViewController {
     }()
     
     //Textfield INN
-    private let innLabel = FormLabel(text: "ИНН*")
+    private let innLabel = FormLabel(text: "ИНН")
     private let innTextfield: CustomTextField = {
         let textfield = CustomTextField(placeholder: "798635783", keyboard: .number)
         return textfield
     }()
     //Textfield FIO
-    private let fioLabel = FormLabel(text: "ФИО*")
+    private let fioLabel = FormLabel(text: "ФИО")
     private let fioTextfield: CustomTextField = {
         let textfield = CustomTextField(placeholder: "Иванов Иван Иванович", keyboard: .adc)
         return textfield
@@ -33,7 +33,7 @@ class MyBidVC: UIViewController {
     //Textfield phone
     private let phoneLabel = FormLabel(text: "Телефон контактного лица")
     private let phoneTextfield: CustomTextField = {
-        let textfield = CustomTextField(placeholder: "798635783", keyboard: .number)
+        let textfield = CustomTextField(placeholder: "+7 (495) 107-11-76", keyboard: .number)
         return textfield
     }()
     
@@ -52,6 +52,8 @@ class MyBidVC: UIViewController {
     private lazy var nextButton: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Далее")
         button.addTarget(self,action: #selector(buttonAction),for: .touchUpInside)
+        button.alpha = 0.5
+        button.isEnabled = false
         return button
     }()
     @objc func buttonAction() {
@@ -61,10 +63,13 @@ class MyBidVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = .white
         navigationItem.title = "Новая заявка на лизинг"
         setViews()
         setConstraints()
+        innTextfield.delegate = self
+        fioTextfield.delegate = self
+        phoneTextfield.delegate = self
     }
     
     func setViews() {
@@ -96,3 +101,48 @@ extension MyBidVC {
         ])
     }
 }
+
+
+extension MyBidVC: UITextFieldDelegate{
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+
+        if innTextfield.text?.count ?? 0 > 7 && fioTextfield.text?.count ?? 0 > 10{
+            nextButton.alpha = 1
+            nextButton.isEnabled = true
+        }else{
+            nextButton.alpha = 0.5
+            nextButton.isEnabled = false
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == phoneTextfield{
+            guard let text = phoneTextfield.text else {return false}
+            let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            phoneTextfield.text = formatter(mask: "+X (XXX) XXX-XX-XX", phoneNumber: newString)
+            return false
+        }
+        return true
+        
+        
+    }
+    
+    func formatter(mask:String, phoneNumber:String) -> String{
+        let number = phoneNumber.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result:String = ""
+        var index = number.startIndex
+        
+        for character in mask where index < number.endIndex{
+            if character == "X" {
+                result.append(number[index])
+                index = number.index(after: index)
+            }else{
+                result.append(character)
+            }
+        }
+        
+        return result
+    }
+}
+

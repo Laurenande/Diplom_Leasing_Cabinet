@@ -34,5 +34,6 @@ class CustomTextField: UITextField {
         //returnKeyType = UIReturnKeyType.continue
         clearButtonMode = UITextField.ViewMode.whileEditing
         contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        overrideUserInterfaceStyle = .light
     }
 }

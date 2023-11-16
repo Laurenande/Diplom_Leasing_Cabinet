@@ -38,6 +38,7 @@ class TarrifBidVC: UIViewController{
         lay.scrollDirection = .vertical
         let coll = UICollectionView(frame: .zero, collectionViewLayout: lay)
         coll.translatesAutoresizingMaskIntoConstraints = false
+        coll.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         coll.register(CutomCell.self, forCellWithReuseIdentifier: "cell")
         coll.translatesAutoresizingMaskIntoConstraints = false
         return coll
@@ -119,6 +120,10 @@ extension TarrifBidVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             return CGSize(width: view.frame.width/1.05, height: 300)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(20)
+    }
 }
 //MARK: - Set constraints
 extension TarrifBidVC{
@@ -134,7 +139,7 @@ extension TarrifBidVC{
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 1200),
+            contentView.heightAnchor.constraint(equalToConstant: 1250),
             
             infoCollection.topAnchor.constraint(equalTo: contentView.topAnchor),
             infoCollection.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -174,7 +179,12 @@ class CutomCell: UICollectionViewCell {
         addSubview(titleLabel)
         addSubview(textLabel)
         layer.cornerRadius = 12
-        backgroundColor = .secondarySystemBackground
+        //backgroundColor = .secondarySystemBackground
+        backgroundColor = .systemGray6
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.4
+        layer.shadowOffset = CGSize(width: 1, height: 1)
+        layer.shadowRadius = 3
         setConstraints()
     }
     

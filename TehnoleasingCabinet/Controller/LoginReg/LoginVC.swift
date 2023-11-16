@@ -11,6 +11,8 @@ class LoginVC: UIViewController {
 
     private lazy var buttonLogin: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Вход")
+        button.alpha = 0.5
+        button.isEnabled = false
         button.addTarget(self, action: #selector(buttonActionLogin), for: .touchUpInside)
         return button
     }()
@@ -24,6 +26,8 @@ class LoginVC: UIViewController {
         button.addTarget(self,
                          action: #selector(buttonActionReg),
                          for: .touchUpInside)
+        button.alpha = 0.5
+        button.isEnabled = false
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -54,6 +58,7 @@ class LoginVC: UIViewController {
     let stack = UIStackView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        phoneTextfield.delegate = self
         setViews()
         setConstraints()
         initializeHideKeyboard()
@@ -147,3 +152,43 @@ extension LoginVC{
      }
 }
 
+extension LoginVC: UITextFieldDelegate{
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+
+        if phoneTextfield.text?.count == 18{
+            buttonLogin.alpha = 1
+            buttonLogin.isEnabled = true
+            buttonReg.alpha = 1
+            buttonReg.isEnabled = true
+        }else{
+            buttonLogin.alpha = 0.5
+            buttonLogin.isEnabled = false
+            buttonReg.alpha = 0.5
+            buttonReg.isEnabled = false
+        }
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = phoneTextfield.text else {return false}
+        let newString = (text as NSString).replacingCharacters(in: range, with: string)
+        phoneTextfield.text = formatter(mask: "+X (XXX) XXX-XX-XX", phoneNumber: newString)
+        return false
+        
+    }
+    
+    func formatter(mask:String, phoneNumber:String) -> String{
+        let number = phoneNumber.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result:String = ""
+        var index = number.startIndex
+        
+        for character in mask where index < number.endIndex{
+            if character == "X" {
+                result.append(number[index])
+                index = number.index(after: index)
+            }else{
+                result.append(character)
+            }
+        }
+        
+        return result
+    }
+}

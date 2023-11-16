@@ -11,8 +11,7 @@ class PayVC: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll
-            .backgroundColor = .white
+        scroll.backgroundColor = .white
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
@@ -30,17 +29,22 @@ class PayVC: UIViewController {
         let coll = UICollectionView(frame: .zero, collectionViewLayout: lay)
         coll.translatesAutoresizingMaskIntoConstraints = false
         coll.register(PayCell.self, forCellWithReuseIdentifier: "cell")
+        coll.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         coll.translatesAutoresizingMaskIntoConstraints = false
+        coll.overrideUserInterfaceStyle = .light
         return coll
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Выплаты"
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = .white
         infoCollection.dataSource = self
         infoCollection.delegate = self
-        
+        //let refreshControl = UIRefreshControl()
+        //scrollView.refreshControl = refreshControl
+        //scrollView.addSubview(refreshControl)
         setViews()
         setConstraints()
         
@@ -70,6 +74,10 @@ extension PayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: view.frame.width/1.05, height: 175)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(20)
     }
      
 }

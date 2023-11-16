@@ -19,25 +19,25 @@ class BidStep2VC: UIViewController {
     }()
     
     //Textfield group
-    private let group = ["Лизинг транспорта и техники", "Юр. Лицо", "ИП"]
+    private let group = ["Лизинг транспорта и техники", "Лизинг оборудования", "Лизинг шин", "Лизинг недвижимости"]
     private let groupPicker = UIPickerView()
-    private let groupLabel = FormLabel(text: "Выберите группу*")
+    private let groupLabel = FormLabel(text: "Выберите группу")
     private let groupTextfield: CustomTextField = {
-        let textfield = CustomTextField(placeholder: "798635783", keyboard: .number)
+        let textfield = CustomTextField(placeholder: "Лизинг траспорта и техники", keyboard: .number)
         return textfield
     }()
     //Textfield type
-    private let type = ["Легковые автомобили", "Юр. Лицо", "ИП"]
+    private let type = ["Легковые автомобили", "Грузовые автомобили", "Спецтехника", "Сельхозтехника (ПСМ)", "Прицепы", "Автобусы и микро-автобусы"]
     private let typePicker = UIPickerView()
-    private let typeLabel = FormLabel(text: "Выберите тип имущества*")
+    private let typeLabel = FormLabel(text: "Выберите тип имущества")
     private let typeTextfield: CustomTextField = {
-        let textfield = CustomTextField(placeholder: "Иванов Иван Иванович", keyboard: .adc)
+        let textfield = CustomTextField(placeholder: "Тип имущества", keyboard: .adc)
         return textfield
     }()
     //Textfield name
     private let nameLabel = FormLabel(text: "Наименование предмета лизинга")
     private let nameTextfield: CustomTextField = {
-        let textfield = CustomTextField(placeholder: "798635783", keyboard: .number)
+        let textfield = CustomTextField(placeholder: "Maserati", keyboard: .number)
         return textfield
     }()
     
@@ -55,6 +55,8 @@ class BidStep2VC: UIViewController {
     
     private lazy var nextButton: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Далее")
+        button.alpha = 0.5
+        button.isEnabled = false
         button.addTarget(self,action: #selector(buttonAction),for: .touchUpInside)
         return button
     }()
@@ -66,8 +68,12 @@ class BidStep2VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .white
         navigationItem.title = "Новая заявка"
+        
+        groupTextfield.delegate = self
+        typeTextfield.delegate = self
+        nameTextfield.delegate = self
         setViews()
         setConstraints()
         // Do any additional setup after loading the view.
@@ -151,18 +157,8 @@ extension BidStep2VC: UIPickerViewDelegate, UIPickerViewDataSource{
 
 //MARK: UITextFieldDelegate
 extension BidStep2VC: UITextFieldDelegate{
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let currentTextCount = textField.text?.count ?? 0
-        
-        if range.length + range.location > currentTextCount{
-             return false
-        }
-        let newLength = currentTextCount + string.count - range.length
-        return newLength <= 6
-    }
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if textField.text != ""{
+        if groupTextfield.text != "" && typeTextfield.text != "" && nameTextfield.text != ""{
             nextButton.alpha = 1
             nextButton.isEnabled = true
         }else{

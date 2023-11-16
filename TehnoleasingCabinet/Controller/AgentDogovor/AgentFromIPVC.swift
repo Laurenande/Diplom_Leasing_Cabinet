@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class AgentFromIPVC: UIViewController {
+class AgentFromIPVC: UIViewController, UITextFieldDelegate {
 
     private let formStack: UIStackView = {
         let stack = UIStackView()
@@ -18,6 +18,8 @@ class AgentFromIPVC: UIViewController {
     }()
     
     //Textfield FIO
+    private let fio = ["Упрощённая система налогообложения", "Общая система налогообложения", "Иная система налогообложения"]
+    private let fioPicker = UIPickerView()
     private let fioLabel = FormLabel(text: "Выберите систему налогообложения")
     private let fioTextfield: CustomTextField = {
         let textfield = CustomTextField(placeholder: "Простая", keyboard: .adc)
@@ -108,6 +110,11 @@ class AgentFromIPVC: UIViewController {
     
     
     func setViews(){
+        fioPicker.delegate = self
+        fioPicker.dataSource = self
+        fioTextfield.inputView = fioPicker
+        fioTextfield.delegate = self
+        
         view.addSubview(formStack)
         view.addSubview(confirmButton)
         formStack.addArrangedSubview(fioLabel)
@@ -149,5 +156,26 @@ extension AgentFromIPVC {
             dateAPILabel.heightAnchor.constraint(equalToConstant: 20)
             
         ])
+    }
+}
+//MARK: - UIPickerViewDelegate, UIPickerViewDataSource
+extension AgentFromIPVC: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return fio.count
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return fio[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        fioTextfield.text = fio[row]
+        fioTextfield.resignFirstResponder()
     }
 }

@@ -20,6 +20,16 @@ class ProfileVC: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    private let logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "AppIcon")
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 55
+        imageView.layer.borderWidth = CGFloat(integerLiteral: 2)
+        return imageView
+    }()
     //Create form element
     private let formStack: UIStackView = {
        let stack = UIStackView()
@@ -75,6 +85,7 @@ class ProfileVC: UIViewController {
     }
     
     func setViews() {
+        view.addSubview(logoImageView)
         view.addSubview(fioLabel)
         view.addSubview(formStack)
         view.addSubview(contractButton)
@@ -91,11 +102,17 @@ class ProfileVC: UIViewController {
 extension ProfileVC{
     func setConstraints() {
         NSLayoutConstraint.activate([
-            fioLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            
+            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImageView.heightAnchor.constraint(equalToConstant: 110),
+            logoImageView.widthAnchor.constraint(equalToConstant: 110),
+            
+            fioLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 40),
             fioLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
             fioLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
             
-            formStack.topAnchor.constraint(equalTo: fioLabel.bottomAnchor, constant: 100),
+            formStack.topAnchor.constraint(equalTo: fioLabel.bottomAnchor, constant: 80),
             formStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             formStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             

@@ -31,6 +31,8 @@ class RegVC: UIViewController {
     
     private lazy var sendKod: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Отправить код")
+        button.alpha = 0.5
+        button.isEnabled = false
         button.addTarget(self, action: #selector(buttonActionSendSMS), for: .touchUpInside)
         return button
     }()
@@ -86,6 +88,7 @@ class RegVC: UIViewController {
         setViews()
         setConstraints()
         initializeHideKeyboard()
+        phoneTextfield.delegate = self
         // Do any additional setup after loading the view.
     }
     @objc func buttonActionSendSMS() {
@@ -102,6 +105,9 @@ class RegVC: UIViewController {
 //MARK: - Setting Views
 extension RegVC{
     private func setViews(){
+        fioTextfield.delegate = self
+        mailTextfield.delegate = self
+        phoneTextfield.delegate = self
         view.backgroundColor = .white
         view.addSubview(logoImageView)
         view.addSubview(titleLabel)
@@ -173,4 +179,46 @@ extension RegVC{
         view.endEditing(true)
      }
     
+}
+extension RegVC: UITextFieldDelegate{
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+
+        if fioTextfield.text?.count ?? 0 > 7 && mailTextfield.text?.count ?? 0 > 10 && phoneTextfield.text?.count ?? 0 > 8 {
+            sendKod.alpha = 1
+            sendKod.isEnabled = true
+        }else{
+            sendKod.alpha = 0.5
+            sendKod.isEnabled = false
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == phoneTextfield{
+            guard let text = phoneTextfield.text else {return false}
+            let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            phoneTextfield.text = formatter(mask: "+X (XXX) XXX-XX-XX", phoneNumber: newString)
+            return false
+        }
+        return true
+    }
+    
+    func formatter(mask:String, phoneNumber:String) -> String{
+        let number = phoneNumber.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result:String = ""
+        var index = number.startIndex
+        
+        for character in mask where index < number.endIndex{
+            if character == "X" {
+                result.append(number[index])
+                index = number.index(after: index)
+            }else{
+                result.append(character)
+            }
+        }
+        
+        return result
+    }
+    
+   
 }

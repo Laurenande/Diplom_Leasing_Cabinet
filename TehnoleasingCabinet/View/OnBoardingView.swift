@@ -57,15 +57,16 @@ class OnBoardingView: UIView {
             pageImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             //pageImage.centerYAnchor.constraint(equalTo: centerYAnchor),
             pageImage.heightAnchor.constraint(equalToConstant: 300),
-            pageImage.bottomAnchor.constraint(equalTo: pageLabel.topAnchor, constant: 0),
+            //pageImage.bottomAnchor.constraint(equalTo: pageLabel.topAnchor, constant: 0),
             
-            pageLabel.topAnchor.constraint(equalTo: pageImage.bottomAnchor, constant: 0),
+           // pageLabel.topAnchor.constraint(equalTo: pageImage.bottomAnchor, constant: 10),
+            pageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             
             pageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             pageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             //pageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             //pageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -200),
-            pageLabel.heightAnchor.constraint(equalToConstant: 100),
+            pageLabel.heightAnchor.constraint(equalToConstant: 130),
             
         ])
     }

@@ -53,6 +53,10 @@ class PayCell: UICollectionViewCell {
 
         layer.cornerRadius = 12
         backgroundColor = .systemGray6
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.4
+        layer.shadowOffset = CGSize(width: 1, height: 1)
+        layer.shadowRadius = 3
         setConstraints()
     }
     

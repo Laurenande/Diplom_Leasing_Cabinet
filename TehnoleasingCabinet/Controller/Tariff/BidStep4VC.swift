@@ -164,7 +164,7 @@ class BidStep4VC: UIViewController {
         return button
     }()
     @objc func buttonAction() {
-        let VCReg = AgentContractVC()
+        let VCReg = BidSendSMS()
         nextButton.zoomInWithEasing()
         navigationController?.pushViewController(VCReg, animated: true)
     }
@@ -172,7 +172,7 @@ class BidStep4VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .white
         navigationItem.title = "Новая заявка"
         addPlaceholderTextView()
         setViews()

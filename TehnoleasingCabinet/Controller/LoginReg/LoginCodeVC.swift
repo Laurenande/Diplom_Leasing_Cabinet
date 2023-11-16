@@ -48,6 +48,7 @@ class LoginCodeVC: UIViewController {
         textField.textAlignment = .center
         textField.keyboardType = .asciiCapableNumberPad
         textField.isSelected = true
+        textField.overrideUserInterfaceStyle = .light
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -171,7 +172,7 @@ extension LoginCodeVC{
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
             logoImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             logoImageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             logoImageView.heightAnchor.constraint(equalToConstant: 70),
@@ -244,6 +245,7 @@ extension LoginCodeVC: UITextFieldDelegate{
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField.text?.count == 6{
             nextButton.alpha = 1
+            dismissMyKeyboard()
             nextButton.isEnabled = true
         }else{
             nextButton.alpha = 0.5

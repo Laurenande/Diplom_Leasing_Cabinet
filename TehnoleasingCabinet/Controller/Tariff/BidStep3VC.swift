@@ -20,31 +20,33 @@ class BidStep3VC: UIViewController {
     }()
     
     //Textfield group
-    private let group = ["Лизинг транспорта и техники", "Юр. Лицо", "ИП"]
+    private let group = ["1%", "1.25%", "1.5%", "1.75%", "2%", "2.25%", "2.5%", "2.75%", "3%"]
     private let groupPicker = UIPickerView()
     private let stavkaLabel = FormLabel(text: "Ставка вознагрождения")
     private let stavkaTextfield: CustomTextField = {
-        let textfield = CustomTextField(placeholder: "798635783", keyboard: .number)
+        let textfield = CustomTextField(placeholder: "2%", keyboard: .number)
         return textfield
     }()
     //Textfield type
-    private let type = ["Легковые автомобили", "Юр. Лицо", "ИП"]
+    private let type = ["0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%", "40%", "45%", "49%"]
     private let typePicker = UIPickerView()
     private let avansLabel = FormLabel(text: "Аванс")
     private let avansTextfield: CustomTextField = {
-        let textfield = CustomTextField(placeholder: "Иванов Иван Иванович", keyboard: .adc)
+        let textfield = CustomTextField(placeholder: "30%", keyboard: .adc)
         return textfield
     }()
     //Textfield name
     private let summaLabel = FormLabel(text: "Сумма вознагрождения")
     private let summaTextfield: CustomTextField = {
-        let textfield = CustomTextField(placeholder: "798635783", keyboard: .number)
+        let textfield = CustomTextField(placeholder: "", keyboard: .number)
         return textfield
     }()
     //Textfield name
+    private let date = ["12 месяцев", "15 месяцев", "18 месяцев", "21 месяц", "24 месяца", "27 месяцев", "30 месяцев", "33 месяца", "36 месяцев", "39 месяцев", "42 месяца", "45 месяцев", "48 месяцев", "51 месяц", "54 месяца", "57 месяцев", "60 месяцев"]
+    private let datePicker = UIPickerView()
     private let dateLabel = FormLabel(text: "Срок лизинга")
     private let dateTextfield: CustomTextField = {
-        let textfield = CustomTextField(placeholder: "798635783", keyboard: .number)
+        let textfield = CustomTextField(placeholder: "12 месяцев", keyboard: .number)
         return textfield
     }()
     
@@ -62,6 +64,8 @@ class BidStep3VC: UIViewController {
     
     private lazy var nextButton: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Далее")
+        button.alpha = 0.5
+        button.isEnabled = false
         button.addTarget(self,action: #selector(buttonAction),for: .touchUpInside)
         return button
     }()
@@ -74,7 +78,7 @@ class BidStep3VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .white
         navigationItem.title = "Новая заявка"
         setViews()
         setConstraints()
@@ -85,12 +89,19 @@ class BidStep3VC: UIViewController {
         groupPicker.delegate = self
         groupPicker.dataSource = self
         stavkaTextfield.inputView = groupPicker
+        stavkaTextfield.delegate = self
         
         typePicker.delegate = self
         typePicker.dataSource = self
         avansTextfield.inputView = typePicker
+        avansTextfield.delegate = self
         
+        datePicker.delegate = self
+        datePicker.dataSource = self
+        dateTextfield.inputView = datePicker
+        dateTextfield.delegate = self
         
+        summaTextfield.delegate = self
         
         view.addSubview(formStack)
         view.addSubview(nextButton)
@@ -131,15 +142,19 @@ extension BidStep3VC: UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == groupPicker{
             return group.count
-        }else{
+        }else if pickerView == typePicker{
             return type.count
+        } else{
+            return date.count
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == groupPicker{
             return group[row]
-        }else {
+        }else if pickerView == typePicker{
             return type[row]
+        }else {
+            return date[row]
         }
     }
     
@@ -147,9 +162,25 @@ extension BidStep3VC: UIPickerViewDelegate, UIPickerViewDataSource{
         if pickerView == groupPicker{
             stavkaTextfield.text = group[row]
             stavkaTextfield.resignFirstResponder()
-        }else{
+        }else if pickerView == typePicker{
             avansTextfield.text = type[row]
             avansTextfield.resignFirstResponder()
+        }else{
+            dateTextfield.text = date[row]
+            dateTextfield.resignFirstResponder()
+        }
+    }
+}
+
+//MARK: UITextFieldDelegate
+extension BidStep3VC: UITextFieldDelegate{
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if stavkaTextfield.text != "" && avansTextfield.text != "" && dateTextfield.text != "" && summaTextfield.text != ""{
+            nextButton.alpha = 1
+            nextButton.isEnabled = true
+        }else{
+            nextButton.alpha = 0.5
+            nextButton.isEnabled = false
         }
     }
 }

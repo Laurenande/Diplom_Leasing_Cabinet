@@ -7,8 +7,8 @@
 
 import UIKit
 
-class AgentFromURVC: UIViewController {
-
+class AgentFromURVC: UIViewController, UITextFieldDelegate {
+    
     private let formStack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -19,9 +19,11 @@ class AgentFromURVC: UIViewController {
     }()
     
     //Textfield FIO
+    private let fio = ["Упрощённая система налогообложения", "Общая система налогообложения", "Иная система налогообложения"]
+    private let fioPicker = UIPickerView()
     private let fioLabel = FormLabel(text: "Выберите систему налогообложения")
     private let fioTextfield: CustomTextField = {
-        let textfield = CustomTextField(placeholder: "Простая", keyboard: .adc)
+        let textfield = CustomTextField(placeholder: "Упрощённая система налогообложения", keyboard: .adc)
         return textfield
     }()
     //Textfield INN
@@ -30,7 +32,7 @@ class AgentFromURVC: UIViewController {
         let textfield = CustomTextField(placeholder: "798635783", keyboard: .number)
         return textfield
     }()
-
+    
     private let innStack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -109,6 +111,13 @@ class AgentFromURVC: UIViewController {
     
     
     func setViews(){
+        fioPicker.delegate = self
+        fioPicker.dataSource = self
+        fioTextfield.inputView = fioPicker
+        fioTextfield.delegate = self
+        
+        
+        
         view.addSubview(formStack)
         view.addSubview(confirmButton)
         formStack.addArrangedSubview(fioLabel)
@@ -134,7 +143,7 @@ class AgentFromURVC: UIViewController {
 extension AgentFromURVC {
     func setConstraints() {
         NSLayoutConstraint.activate([
-           
+            
             
             formStack.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
             formStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12),
@@ -150,5 +159,25 @@ extension AgentFromURVC {
             dateAPILabel.heightAnchor.constraint(equalToConstant: 20)
             
         ])
+    }
+}
+extension AgentFromURVC: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return fio.count
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return fio[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        fioTextfield.text = fio[row]
+        fioTextfield.resignFirstResponder()
     }
 }

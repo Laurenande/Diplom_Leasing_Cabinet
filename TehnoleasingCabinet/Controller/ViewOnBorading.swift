@@ -75,13 +75,13 @@ class ViewOnBorading: UIViewController {
     private func createSlides() -> [OnBoardingView]{
         let firstOnboardingView = OnBoardingView()
         firstOnboardingView.setImageBoard(image: "individuol")
-        firstOnboardingView.setLabelText(text: "Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке")
+        firstOnboardingView.setLabelText(text: "Индивидуальный подход: Мы стремимся к тому, чтобы каждый клиент чувствовал, что его потребности и ожидания уникальны. Наши специалисты готовы предоставить персонализированное обслуживание, учитывая особенности каждого клиента.")
         let secondOnboardingView = OnBoardingView()
         secondOnboardingView.setImageBoard(image: "search")
-        secondOnboardingView.setLabelText(text: "Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке")
+        secondOnboardingView.setLabelText(text: "Оказание содействия клиентам: Мы гордимся предоставлением не только продуктов или услуг, но и активной поддержкой. Наша команда всегда готова оказать содействие клиентам в решении любых вопросов, возникающих в процессе сотрудничества.")
         let thirdOnboardingView = OnBoardingView()
         thirdOnboardingView.setImageBoard(image: "best")
-        thirdOnboardingView.setLabelText(text: "Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке")
+        thirdOnboardingView.setLabelText(text: "Быстрое рассмотрение предложений: Мы ценим время наших клиентов и стремимся оперативно реагировать на их запросы. Ваши предложения будут рассмотрены быстро и внимательно, чтобы обеспечить эффективное взаимодействие с нашей компанией.")
         
         return [firstOnboardingView,secondOnboardingView,thirdOnboardingView]
     }
@@ -149,14 +149,14 @@ extension ViewOnBorading{
             pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             pageControl.heightAnchor.constraint(equalToConstant: 50),
             
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
             logoImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
             logoImageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
             logoImageView.heightAnchor.constraint(equalToConstant: 60),
             
             buttonFinal.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 100),
             buttonFinal.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -100),
-            buttonFinal.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
+            buttonFinal.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80),
             buttonFinal.heightAnchor.constraint(equalToConstant: 50)
         ])
     }

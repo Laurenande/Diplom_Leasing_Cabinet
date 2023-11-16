@@ -34,6 +34,9 @@
 		87B88F0B2AE952D600D9D9A8 /* AgentFromIPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B88F0A2AE952D600D9D9A8 /* AgentFromIPVC.swift */; };
 		87DFE4D62AF94368004ACC4D /* PayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFE4D52AF94368004ACC4D /* PayVC.swift */; };
 		87DFE4D82AF94401004ACC4D /* PayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFE4D72AF94401004ACC4D /* PayCell.swift */; };
+		87DFE4DA2AFA377D004ACC4D /* BidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFE4D92AFA377D004ACC4D /* BidVC.swift */; };
+		87DFE4DC2AFA37BD004ACC4D /* BidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFE4DB2AFA37BD004ACC4D /* BidCell.swift */; };
+		87DFE4DE2AFA39B0004ACC4D /* BidSendSMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFE4DD2AFA39B0004ACC4D /* BidSendSMS.swift */; };
 		87EA8F8A2AD421CE00331A32 /* BidStep4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA8F892AD421CE00331A32 /* BidStep4VC.swift */; };
 		87EA8F8C2AD424AE00331A32 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA8F8B2AD424AE00331A32 /* RadioButton.swift */; };
 		87EE7B0F2AC6BE1B00161D9F /* AgentContractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EE7B0E2AC6BE1B00161D9F /* AgentContractVC.swift */; };
@@ -69,11 +72,15 @@
 		87B1CE152AA4CE8D002F72B9 /* FormLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabel.swift; sourceTree = "<group>"; };
 		87B1CE172AA4DFC5002F72B9 /* AskLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskLabel.swift; sourceTree = "<group>"; };
 		87B1CE192AA4F3C4002F72B9 /* TehnoBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TehnoBlueButton.swift; sourceTree = "<group>"; };
+		87B47A2E2B025D9100E7E031 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		87B88F062AE8F53700D9D9A8 /* ButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimation.swift; sourceTree = "<group>"; };
 		87B88F082AE8F7F800D9D9A8 /* AgentSMSVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentSMSVC.swift; sourceTree = "<group>"; };
 		87B88F0A2AE952D600D9D9A8 /* AgentFromIPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentFromIPVC.swift; sourceTree = "<group>"; };
 		87DFE4D52AF94368004ACC4D /* PayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayVC.swift; sourceTree = "<group>"; };
 		87DFE4D72AF94401004ACC4D /* PayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCell.swift; sourceTree = "<group>"; };
+		87DFE4D92AFA377D004ACC4D /* BidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidVC.swift; sourceTree = "<group>"; };
+		87DFE4DB2AFA37BD004ACC4D /* BidCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidCell.swift; sourceTree = "<group>"; };
+		87DFE4DD2AFA39B0004ACC4D /* BidSendSMS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidSendSMS.swift; sourceTree = "<group>"; };
 		87EA8F892AD421CE00331A32 /* BidStep4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidStep4VC.swift; sourceTree = "<group>"; };
 		87EA8F8B2AD424AE00331A32 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		87EE7B0E2AC6BE1B00161D9F /* AgentContractVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentContractVC.swift; sourceTree = "<group>"; };
@@ -142,6 +149,7 @@
 				87B1CE192AA4F3C4002F72B9 /* TehnoBlueButton.swift */,
 				87EA8F8B2AD424AE00331A32 /* RadioButton.swift */,
 				87DFE4D72AF94401004ACC4D /* PayCell.swift */,
+				87DFE4DB2AFA37BD004ACC4D /* BidCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 				87EE7B142AC6BFC500161D9F /* TabController.swift */,
 				87EE7B1B2AC9A1DE00161D9F /* ProfileVC.swift */,
 				87DFE4D52AF94368004ACC4D /* PayVC.swift */,
+				87DFE4D92AFA377D004ACC4D /* BidVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -214,6 +223,7 @@
 				87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */,
 				87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */,
 				87EA8F892AD421CE00331A32 /* BidStep4VC.swift */,
+				87DFE4DD2AFA39B0004ACC4D /* BidSendSMS.swift */,
 			);
 			path = Tariff;
 			sourceTree = "<group>";
@@ -255,11 +265,12 @@
 			};
 			buildConfigurationList = 8706AB6F2A9FBE9C007D6DA4 /* Build configuration list for PBXProject "TehnoleasingCabinet" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 8706AB6B2A9FBE9C007D6DA4;
 			productRefGroup = 8706AB752A9FBE9C007D6DA4 /* Products */;
@@ -292,12 +303,14 @@
 				87789A6D2ACEE62D002FDE0C /* BidStep2VC.swift in Sources */,
 				87EE7B152AC6BFC500161D9F /* TabController.swift in Sources */,
 				87789A6F2ACEF3CF002FDE0C /* BidStep3VC.swift in Sources */,
+				87DFE4DA2AFA377D004ACC4D /* BidVC.swift in Sources */,
 				87B1CE1A2AA4F3C4002F72B9 /* TehnoBlueButton.swift in Sources */,
 				872CD86F2AEA53E4004C37D3 /* AgentFromURVC.swift in Sources */,
 				87EE7B1C2AC9A1DE00161D9F /* ProfileVC.swift in Sources */,
 				872CD86D2AEA4317004C37D3 /* AgentFormIP2VC.swift in Sources */,
 				87B88F072AE8F53700D9D9A8 /* ButtonAnimation.swift in Sources */,
 				87DFE4D62AF94368004ACC4D /* PayVC.swift in Sources */,
+				87DFE4DC2AFA37BD004ACC4D /* BidCell.swift in Sources */,
 				8754F8422AA4936F008F4596 /* RegVC.swift in Sources */,
 				8706AB7C2A9FBE9C007D6DA4 /* ViewOnBorading.swift in Sources */,
 				8754F8442AA4A755008F4596 /* CheckBoxButton.swift in Sources */,
@@ -305,6 +318,7 @@
 				8754F86C2AA4BB34008F4596 /* ViewController.swift in Sources */,
 				872CD8712AEA545D004C37D3 /* AgentFormUR2VC.swift in Sources */,
 				87EE7B1E2ACC5B1E00161D9F /* NSMutableAttributedString.swift in Sources */,
+				87DFE4DE2AFA39B0004ACC4D /* BidSendSMS.swift in Sources */,
 				87EE7B112AC6BEB900161D9F /* MyBidVC.swift in Sources */,
 				87B1CE162AA4CE8D002F72B9 /* FormLabel.swift in Sources */,
 				87B1CE142AA4CD5F002F72B9 /* CustomTextField.swift in Sources */,
@@ -331,6 +345,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8706AB832A9FBE9D007D6DA4 /* Base */,
+				87B47A2E2B025D9100E7E031 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -342,6 +357,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -402,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -462,10 +479,12 @@
 				DEVELOPMENT_TEAM = HDHD4AMNPT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TehnoleasingCabinet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ТЕХНО Лизинг Кабинет";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,10 +509,12 @@
 				DEVELOPMENT_TEAM = HDHD4AMNPT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TehnoleasingCabinet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ТЕХНО Лизинг Кабинет";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
