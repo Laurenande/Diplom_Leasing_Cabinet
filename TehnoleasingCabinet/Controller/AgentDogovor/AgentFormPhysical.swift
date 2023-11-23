@@ -28,7 +28,7 @@ class AgentFormPhysical: UIViewController {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.spacing = 5
+        stack.spacing = 9
         stack.isLayoutMarginsRelativeArrangement = true;
         return stack
     }()

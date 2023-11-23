@@ -46,15 +46,15 @@ class RegVC: UIViewController {
         return stack
     }()
     //FIO element
-    private let fioLabel = FormLabel(text: "ФИО")
+    private let fioLabel = FormLabel(text: "ФИО:")
     private let fioTextfield = CustomTextField(placeholder: "Куракин Егор Андреевич", keyboard: .adc)
     
     //Email element
-    private let mailLabel = FormLabel(text: "E-mail")
+    private let mailLabel = FormLabel(text: "E-mail:")
     private let mailTextfield = CustomTextField(placeholder: "info@tehnoleasing.ru", keyboard: .adc)
     
     //Email element
-    private let phoneLabel = FormLabel(text: "Телефон")
+    private let phoneLabel = FormLabel(text: "Телефон:")
     private let phoneTextfield = CustomTextField(placeholder: "+7 (999) 999-99-99", keyboard: .number)
     
     //create ask check
@@ -67,8 +67,26 @@ class RegVC: UIViewController {
         return stack
     }()
     private let checkBox1 = CheckBoxButton()
-    private let agreeLabel = AskLabel(text: "Ознакомлен с политикой обработки персональных данных и согласен на обработку персональных данных как Юр.Лицо/Физ.Лицо")
-    
+    lazy var agreeLabel: UILabel =  {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.textColor = .link
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.isUserInteractionEnabled = true
+        let guestureRecord = UITapGestureRecognizer(target: self, action: #selector(policyTap(_:)))
+        label.addGestureRecognizer(guestureRecord)
+        let attributes:[NSAttributedString.Key : Any] = [.underlineStyle : NSUnderlineStyle.single.rawValue]
+        label.attributedText = NSMutableAttributedString(string: "Ознакомлен с политикой обработки персональных данных и согласен на обработку персональных данных как Юр.Лицо/Физ.Лицо", attributes: attributes)
+        return label
+    }()
+    @objc func policyTap(_ sender: Any){
+        let detailViewController = PolicyIpAndFisVC()
+            let nav = UINavigationController(rootViewController: detailViewController)
+            nav.modalPresentationStyle = .pageSheet
+            present(nav, animated: true, completion: nil)
+
+    }
     //create ask check
     private let checkBoxStack2: UIStackView = {
        let stack = UIStackView()
@@ -81,8 +99,27 @@ class RegVC: UIViewController {
         return stack
     }()
     private let checkBox2 = CheckBoxButton()
-    private let agreeLabel2 = AskLabel(text: "Ознакомлен с пользовательским соглашением")
+    lazy var agreeLabel2: UILabel =  {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.textColor = .link
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.isUserInteractionEnabled = true
+        let guestureRecord = UITapGestureRecognizer(target: self, action: #selector(soglashenieTap(_:)))
+        label.addGestureRecognizer(guestureRecord)
+        let attributes:[NSAttributedString.Key : Any] = [.underlineStyle : NSUnderlineStyle.single.rawValue]
+        label.attributedText = NSMutableAttributedString(string: "Ознакомлен с пользовательским соглашением", attributes: attributes)
+        return label
+    }()
     
+    @objc func soglashenieTap(_ sender: Any){
+        let detailViewController = PersonPolicyVC()
+            let nav = UINavigationController(rootViewController: detailViewController)
+            nav.modalPresentationStyle = .pageSheet
+            present(nav, animated: true, completion: nil)
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
@@ -184,7 +221,7 @@ extension RegVC: UITextFieldDelegate{
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
 
-        if fioTextfield.text?.count ?? 0 > 7 && mailTextfield.text?.count ?? 0 > 10 && phoneTextfield.text?.count ?? 0 > 8 {
+        if fioTextfield.text?.count ?? 0 > 7 && phoneTextfield.text?.count ?? 0 > 8 {
             sendKod.alpha = 1
             sendKod.isEnabled = true
         }else{

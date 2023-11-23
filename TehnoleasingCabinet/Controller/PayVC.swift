@@ -11,7 +11,7 @@ class PayVC: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll.backgroundColor = .white
+        scroll.backgroundColor = .systemBackground
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
@@ -31,15 +31,18 @@ class PayVC: UIViewController {
         coll.register(PayCell.self, forCellWithReuseIdentifier: "cell")
         coll.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         coll.translatesAutoresizingMaskIntoConstraints = false
-        coll.overrideUserInterfaceStyle = .light
+        //coll.overrideUserInterfaceStyle = .dark
+        coll.backgroundColor = .systemBackground
         return coll
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Выплаты"
+        //view.overrideUserInterfaceStyle = .dark
+        //navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
         navigationController?.navigationBar.prefersLargeTitles = true
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         infoCollection.dataSource = self
         infoCollection.delegate = self
         //let refreshControl = UIRefreshControl()
@@ -73,11 +76,31 @@ extension PayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollect
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: view.frame.width/1.05, height: 175)
+        return CGSize(width: view.frame.width/1.05, height: 180)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        configureContextMenu(index: indexPath.row)
+    }
+    
+    func configureContextMenu(index: Int) -> UIContextMenuConfiguration{
+        let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
+            
+            let edit = UIAction(title: "Обращени", image: UIImage(systemName: "info.bubble"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
+                print("edit button clicked")
+            }
+            let cancel = UIAction(title: "Отменить", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
+                print("edit button clicked")
+            }
+            
+            return UIMenu(title: "Действие", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [edit,cancel])
+            
+        }
+        return context
     }
      
 }

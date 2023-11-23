@@ -71,20 +71,6 @@ class LoginCodeVC: UIViewController {
            present(VCReg, animated: true, completion: nil)
 
        }
-    
-    private lazy var noSendSMS: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Не приходит СМС?", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.link, for: .normal)
-        button.layer.cornerRadius = 14
-        //button.addTarget(self,
-        //               action: #selector(buttonActionLogin),
-        //             for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     private lazy var sendSMSTwo: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Отправить код повторно", for: .normal)
@@ -157,7 +143,6 @@ extension LoginCodeVC{
         view.addSubview(titleLabel)
         view.addSubview(subTitleLabel)
         view.addSubview(smsCodeTextFiled)
-        view.addSubview(noSendSMS)
         view.addSubview(sendSMSTwo)
         view.addSubview(timerLable)
         view.addSubview(nextButton)
@@ -191,13 +176,8 @@ extension LoginCodeVC{
             smsCodeTextFiled.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
             smsCodeTextFiled.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
             smsCodeTextFiled.heightAnchor.constraint(equalToConstant: 40),
-            
-            noSendSMS.topAnchor.constraint(equalTo: smsCodeTextFiled.bottomAnchor, constant: 10),
-            noSendSMS.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70),
-            noSendSMS.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
-            noSendSMS.heightAnchor.constraint(equalToConstant: 30),
-            
-            sendSMSTwo.topAnchor.constraint(equalTo: noSendSMS.bottomAnchor, constant: 5),
+           
+            sendSMSTwo.topAnchor.constraint(equalTo: smsCodeTextFiled.bottomAnchor, constant: 5),
             sendSMSTwo.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70),
             sendSMSTwo.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
             sendSMSTwo.heightAnchor.constraint(equalToConstant: 30),

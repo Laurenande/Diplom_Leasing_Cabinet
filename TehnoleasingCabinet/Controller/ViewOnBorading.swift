@@ -75,13 +75,13 @@ class ViewOnBorading: UIViewController {
     private func createSlides() -> [OnBoardingView]{
         let firstOnboardingView = OnBoardingView()
         firstOnboardingView.setImageBoard(image: "individuol")
-        firstOnboardingView.setLabelText(text: "Индивидуальный подход: Мы стремимся к тому, чтобы каждый клиент чувствовал, что его потребности и ожидания уникальны. Наши специалисты готовы предоставить персонализированное обслуживание, учитывая особенности каждого клиента.")
+        firstOnboardingView.setLabelText(text: "Мы стремимся к тому, чтобы каждый клиент чувствовал, что его потребности и ожидания уникальны. Наши специалисты готовы предоставить персонализированное обслуживание, учитывая особенности каждого клиента.")
         let secondOnboardingView = OnBoardingView()
         secondOnboardingView.setImageBoard(image: "search")
-        secondOnboardingView.setLabelText(text: "Оказание содействия клиентам: Мы гордимся предоставлением не только продуктов или услуг, но и активной поддержкой. Наша команда всегда готова оказать содействие клиентам в решении любых вопросов, возникающих в процессе сотрудничества.")
+        secondOnboardingView.setLabelText(text: "Мы гордимся предоставлением не только продуктов или услуг, но и активной поддержкой. Наша команда всегда готова оказать содействие клиентам в решении любых вопросов, возникающих в процессе сотрудничества.")
         let thirdOnboardingView = OnBoardingView()
         thirdOnboardingView.setImageBoard(image: "best")
-        thirdOnboardingView.setLabelText(text: "Быстрое рассмотрение предложений: Мы ценим время наших клиентов и стремимся оперативно реагировать на их запросы. Ваши предложения будут рассмотрены быстро и внимательно, чтобы обеспечить эффективное взаимодействие с нашей компанией.")
+        thirdOnboardingView.setLabelText(text: "Мы ценим время наших клиентов и стремимся оперативно реагировать на их запросы. Ваши предложения будут рассмотрены быстро и внимательно, чтобы обеспечить эффективное взаимодействие с нашей компанией.")
         
         return [firstOnboardingView,secondOnboardingView,thirdOnboardingView]
     }

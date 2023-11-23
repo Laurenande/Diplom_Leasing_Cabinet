@@ -11,6 +11,7 @@ class CheckBoxButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButton()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -18,8 +19,10 @@ class CheckBoxButton: UIButton {
     }
     
     func setupButton() {
-        setImage(UIImage(named: "checkBox_off"), for: .normal)
+        setImage(UIImage(named: "off"), for: .normal)
         frame.size = CGSize(width: 20, height: 20)
+        bounds.size = CGSize(width: 20, height: 20)
+        
         addTarget(self,
                   action: #selector(buttonActionSendSMS),
                   for: .touchUpInside)
@@ -27,9 +30,16 @@ class CheckBoxButton: UIButton {
     @objc func buttonActionSendSMS() {
         isSelected = !isSelected
         if isSelected{
-            setImage(UIImage(named: "checkBox_on"), for: .selected)
+            setImage(UIImage(named: "on"), for: .selected)
+            
         }else{
-            setImage(UIImage(named: "checkBox_off"), for: .normal)
+            setImage(UIImage(named: "off"), for: .normal)
         }
+    }
+    func setConstraints() {
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: 20),
+            heightAnchor.constraint(equalToConstant: 20)
+        ])
     }
 }

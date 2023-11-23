@@ -9,11 +9,12 @@ enum typeKey1 {
     case number
     case adc
 }
-class CustomTextField: UITextField {
+class CustomTextField: UITextField, UITextFieldDelegate {
     
     init(placeholder:String, keyboard: typeKey1){
         super.init(frame: .zero)
         setupTextFiled(text: placeholder, keyboard: keyboard)
+        delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -30,10 +31,32 @@ class CustomTextField: UITextField {
         font = UIFont.systemFont(ofSize: 13)
         frame.size = CGSize(width: 200, height: 300)
         borderStyle = UITextField.BorderStyle.roundedRect
+        backgroundColor = .secondarySystemBackground
+        //layer.borderWidth = 1.5
+        //layer.borderColor = UIColor.lightGray.cgColor
+        //layer.cornerRadius = 4
         autocorrectionType = UITextAutocorrectionType.no
-        //returnKeyType = UIReturnKeyType.continue
         clearButtonMode = UITextField.ViewMode.whileEditing
+        addTarget(self, action: #selector(applyActiveStyles), for: UIControl.Event.editingDidBegin)
+        addTarget(self, action: #selector(applyDefaultStyles), for: UIControl.Event.editingDidEnd)
+        
+        
         contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         overrideUserInterfaceStyle = .light
+        
+        
     }
+    
+    @objc func applyActiveStyles() {
+        layer.borderColor = UIColor.systemBlue.cgColor
+        layer.borderWidth = 1.5
+        layer.cornerRadius = 5
+    }
+    
+    @objc func applyDefaultStyles() {
+        layer.borderColor = .none
+        layer.borderWidth = 0
+    }
+
+    
 }

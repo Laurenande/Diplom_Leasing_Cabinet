@@ -7,14 +7,24 @@
 
 import UIKit
 
+enum colorCell {
+    case blue //На расмотрении
+    case green //В работе
+    case orange //Ожидание КК
+    case yellow //Ожидание АВ
+    case grey //Завершена
+    case red //Отказано
+    
+}
+
 class BidCell: UICollectionViewCell {
     
-    let numberLabel = BidLabel(text: "Номер №")
-    let dateLabel = BidLabel(text: "Дата")
-    let clientLabel = BidLabel(text: "Лизингополучатель")
-    let summaLabel = BidLabel(text: "Сумма Фин-вания")
-    let agentComLabel = BidLabel(text: "Агентская ком.")
-    let statusLabel = BidLabel(text: "Статус выплат")
+    let numberLabel = BidLabel(text: "Номер №:")
+    let dateLabel = BidLabel(text: "Дата:")
+    let clientLabel = BidLabel(text: "Лизингополучатель:")
+    let summaLabel = BidLabel(text: "Сумма Фин-вания:")
+    let agentComLabel = BidLabel(text: "Агентская ком.:")
+    let statusLabel = BidLabel(text: "Статус выплат:")
     
     let apiNumberLabel = ApiBidLabel(text: "2456457")
     let apiDateLabel =  ApiBidLabel(text: "12.12.2023")
@@ -23,12 +33,19 @@ class BidCell: UICollectionViewCell {
     let apiSummaLabel = ApiBidLabel(text: "10 000 000 руб.")
     let apiStatusLabel = ApiBidLabel(text: "Одобрено")
     
+    
+    
     let contentPayView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 12
-        view.backgroundColor = .systemGray5
-
+        view.backgroundColor = #colorLiteral(red: 0.9899999499, green: 0.9899999499, blue: 0.9899999499, alpha: 1)
+    
+        view.layer.cornerRadius = 12
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.3
+        view.layer.shadowOffset = CGSize(width: -1, height: 0)
+        view.layer.shadowRadius = 4
         return view
     }()
     
@@ -49,8 +66,8 @@ class BidCell: UICollectionViewCell {
         addSubview(statusLabel)
         addSubview(dateLabel)
 
+        numberLabel.font = .boldSystemFont(ofSize: 16)
         layer.cornerRadius = 12
-        backgroundColor = .systemGray6
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.4
         layer.shadowOffset = CGSize(width: 1, height: 1)
@@ -60,6 +77,32 @@ class BidCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setCellInfo(number: String, date: String, client: String, tariff: String, summa: String, status: String){
+        apiNumberLabel.text = number
+        apiDateLabel.text = date
+        apiClientLabel.text = client
+        apiTariffLabel.text = tariff
+        apiSummaLabel.text = summa
+        apiStatusLabel.text = status
+        
+        switch status {
+        case "На рассмотрении":
+            backgroundColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1) //
+        case "В работе":
+            backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        case "Ожидание КК":
+            backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        case "Ожидание АВ":
+            backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1)
+        case "Завершена":
+            backgroundColor = UIColor(red: 88/255, green: 86/255, blue: 214/255, alpha: 1)
+        case "Отказано":
+            backgroundColor = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1)
+        default:
+            backgroundColor = .systemGray6
+        }
     }
     
     func setConstraints() {
@@ -141,10 +184,14 @@ class BidLabel: UILabel {
         font = .boldSystemFont(ofSize: 14)
         sizeToFit()
         text = textInit
-        textColor = .black
+        textColor = .white
         textAlignment = .left
         numberOfLines = 1
+        //layer.borderWidth = 1
+        //layer.borderColor = CGColor(red: 45, green: 54, blue: 23, alpha: 1)
         frame.size = CGSize(width: 100, height: 200)
+        
+        
     }
 }
 class ApiBidLabel: UILabel {
@@ -160,12 +207,13 @@ class ApiBidLabel: UILabel {
     
     private func setupLabel(textInit: String) {
         translatesAutoresizingMaskIntoConstraints = false
-        font = .systemFont(ofSize: 14)
+        font = .boldSystemFont(ofSize: 14)
         sizeToFit()
         text = textInit
         textColor = .black
         textAlignment = .left
         numberOfLines = 1
         frame.size = CGSize(width: 100, height: 200)
+
     }
 }

@@ -26,8 +26,8 @@ class ProfileVC: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 55
-        imageView.layer.borderWidth = CGFloat(integerLiteral: 2)
+        //imageView.layer.cornerRadius = 55
+        //imageView.layer.borderWidth = CGFloat(integerLiteral: 2)
         return imageView
     }()
     //Create form element
@@ -78,17 +78,23 @@ class ProfileVC: UIViewController {
         view.backgroundColor = .white
         
         navigationItem.title = "Профиль"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .done, target: nil, action: nil)
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .done, target: self, action: #selector(settingsButton))
         setViews()
         setConstraints()
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func settingsButton() {
+        let VCReg = SettingsVC()
+        navigationController?.pushViewController(VCReg, animated: true)
     }
     
     func setViews() {
         view.addSubview(logoImageView)
         view.addSubview(fioLabel)
         view.addSubview(formStack)
-        view.addSubview(contractButton)
+        //view.addSubview(contractButton)
         formStack.addArrangedSubview(mailLabel)
         formStack.addArrangedSubview(mailTextfield)
         formStack.addArrangedSubview(phoneLabel)
@@ -116,10 +122,10 @@ extension ProfileVC{
             formStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             formStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             
-            contractButton.topAnchor.constraint(equalTo: formStack.bottomAnchor, constant: 50),
+            /*contractButton.topAnchor.constraint(equalTo: formStack.bottomAnchor, constant: 50),
             contractButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70),
             contractButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
-            contractButton.heightAnchor.constraint(equalToConstant: 50)
+            contractButton.heightAnchor.constraint(equalToConstant: 50)*/
         ])
     }
 }

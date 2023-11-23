@@ -6,9 +6,12 @@
 //
 
 import UIKit
-
+/**
+ The class creates a screen for joining the Agency Agreement with the choice: Individual Entrepreneur, Individual and Legal Entity
+ */
 class AgentContractVC: UIViewController {
     
+    ///All objects are added to this scroll
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll
@@ -16,7 +19,7 @@ class AgentContractVC: UIViewController {
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
-    
+    ///All objects are added to this UIView so that they all fit on the screen. And after this UIView is added to UIScrollView
     private let contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -37,12 +40,12 @@ class AgentContractVC: UIViewController {
         label.textColor = .black
         label.font = .boldSystemFont(ofSize: 16)
         //label.font = .italicSystemFont(ofSize: 14)
-        label.textAlignment = .left
+        label.textAlignment = .justified
         label.sizeToFit()
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.attributedText = NSMutableAttributedString()
-                                .bold("Присоединение к агентскому договору — обязательное условие для получения агентского вознаграждения.\n")
+                                .bold("Присоединение к агентскому договору — обязательное условие для получения агентского вознаграждения.\n\n")
                                 .normal("Необходимо присоединиться к договору до момента реализации первой сделки. Для рассмотрения заявок и предварительного общения с клиентами, присоединяться к договору необязательно.\nЧтобы присоединиться к договору, необходимо заполнить все данные, приведенные в форме ниже и согласиться к присоединению с помощью смс. Отправка смс будет приравнена к простой электронной подписи.")
                                 
         
@@ -68,15 +71,13 @@ class AgentContractVC: UIViewController {
         label.font = .systemFont(ofSize: 15)
         label.text = "Договор может быть заключен с резидентом Российской Федерации в любом статусе: физическое лицо, юридической лицо, индивидуальный предприниматель.\n(Наиболее предпочтительной формой является договор с ИП.)\n\nДля присоединения к договору, необходимо выбрать свой статус, указать систему налогообложения и далее заполнять данные согласно форме. После отправки вами смс, подтверждающей ваше присоединение, договор уйдет на модерацию и форма не будет доступна для редактирования. Скорректировать данные можно будет через запрос в службу поддержки.\nДоговоры проходят модерацию в рабочие дни, с 9 до 18 часов по мск. По факту прохождения проверки, в интерфейсе вашего кабинета появится соответствующее уведомление.\n"
         //label.font = .italicSystemFont(ofSize: 14)
-        label.textAlignment = .left
+        label.textAlignment = .justified
         label.sizeToFit()
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    
-    
+        
     //Contract element
     private let face = ["Физ. Лицо", "Юр. Лицо", "ИП"]
     private let contractLabel = FormLabel(text: "Выберите Ваш статус*")

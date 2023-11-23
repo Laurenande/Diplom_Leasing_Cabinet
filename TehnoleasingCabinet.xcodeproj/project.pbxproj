@@ -17,10 +17,11 @@
 		872CD86D2AEA4317004C37D3 /* AgentFormIP2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872CD86C2AEA4317004C37D3 /* AgentFormIP2VC.swift */; };
 		872CD86F2AEA53E4004C37D3 /* AgentFromURVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872CD86E2AEA53E4004C37D3 /* AgentFromURVC.swift */; };
 		872CD8712AEA545D004C37D3 /* AgentFormUR2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872CD8702AEA545D004C37D3 /* AgentFormUR2VC.swift */; };
+		874140202B0A1D7800D8BE76 /* PersonPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8741401F2B0A1D7800D8BE76 /* PersonPolicyVC.swift */; };
+		874140222B0CC6D600D8BE76 /* PolicyIpAndFisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874140212B0CC6D600D8BE76 /* PolicyIpAndFisVC.swift */; };
 		8754F8402AA4924D008F4596 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F83F2AA4924D008F4596 /* TextFieldExtension.swift */; };
 		8754F8422AA4936F008F4596 /* RegVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F8412AA4936F008F4596 /* RegVC.swift */; };
 		8754F8442AA4A755008F4596 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F8432AA4A755008F4596 /* CheckBoxButton.swift */; };
-		8754F86C2AA4BB34008F4596 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F86B2AA4BB34008F4596 /* ViewController.swift */; };
 		87789A6A2ACD7FAE002FDE0C /* AgentFormPhysical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87789A692ACD7FAE002FDE0C /* AgentFormPhysical.swift */; };
 		87789A6D2ACEE62D002FDE0C /* BidStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */; };
 		87789A6F2ACEF3CF002FDE0C /* BidStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */; };
@@ -32,6 +33,10 @@
 		87B88F072AE8F53700D9D9A8 /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B88F062AE8F53700D9D9A8 /* ButtonAnimation.swift */; };
 		87B88F092AE8F7F800D9D9A8 /* AgentSMSVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B88F082AE8F7F800D9D9A8 /* AgentSMSVC.swift */; };
 		87B88F0B2AE952D600D9D9A8 /* AgentFromIPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B88F0A2AE952D600D9D9A8 /* AgentFromIPVC.swift */; };
+		87D63F5F2B0F4B0E00583AD5 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D63F5E2B0F4B0E00583AD5 /* SettingsVC.swift */; };
+		87D63F612B0F6B0700583AD5 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D63F602B0F6B0700583AD5 /* SettingTableViewCell.swift */; };
+		87D63F632B0F87E700583AD5 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D63F622B0F87E700583AD5 /* NotificationsVC.swift */; };
+		87D63F652B0F8AC200583AD5 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D63F642B0F8AC200583AD5 /* SwitchTableViewCell.swift */; };
 		87DFE4D62AF94368004ACC4D /* PayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFE4D52AF94368004ACC4D /* PayVC.swift */; };
 		87DFE4D82AF94401004ACC4D /* PayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFE4D72AF94401004ACC4D /* PayCell.swift */; };
 		87DFE4DA2AFA377D004ACC4D /* BidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFE4D92AFA377D004ACC4D /* BidVC.swift */; };
@@ -60,10 +65,11 @@
 		872CD86C2AEA4317004C37D3 /* AgentFormIP2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentFormIP2VC.swift; sourceTree = "<group>"; };
 		872CD86E2AEA53E4004C37D3 /* AgentFromURVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentFromURVC.swift; sourceTree = "<group>"; };
 		872CD8702AEA545D004C37D3 /* AgentFormUR2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentFormUR2VC.swift; sourceTree = "<group>"; };
+		8741401F2B0A1D7800D8BE76 /* PersonPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPolicyVC.swift; sourceTree = "<group>"; };
+		874140212B0CC6D600D8BE76 /* PolicyIpAndFisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyIpAndFisVC.swift; sourceTree = "<group>"; };
 		8754F83F2AA4924D008F4596 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		8754F8412AA4936F008F4596 /* RegVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegVC.swift; sourceTree = "<group>"; };
 		8754F8432AA4A755008F4596 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
-		8754F86B2AA4BB34008F4596 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		87789A692ACD7FAE002FDE0C /* AgentFormPhysical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentFormPhysical.swift; sourceTree = "<group>"; };
 		87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidStep2VC.swift; sourceTree = "<group>"; };
 		87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidStep3VC.swift; sourceTree = "<group>"; };
@@ -76,6 +82,10 @@
 		87B88F062AE8F53700D9D9A8 /* ButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimation.swift; sourceTree = "<group>"; };
 		87B88F082AE8F7F800D9D9A8 /* AgentSMSVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentSMSVC.swift; sourceTree = "<group>"; };
 		87B88F0A2AE952D600D9D9A8 /* AgentFromIPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentFromIPVC.swift; sourceTree = "<group>"; };
+		87D63F5E2B0F4B0E00583AD5 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		87D63F602B0F6B0700583AD5 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		87D63F622B0F87E700583AD5 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		87D63F642B0F8AC200583AD5 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		87DFE4D52AF94368004ACC4D /* PayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayVC.swift; sourceTree = "<group>"; };
 		87DFE4D72AF94401004ACC4D /* PayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCell.swift; sourceTree = "<group>"; };
 		87DFE4D92AFA377D004ACC4D /* BidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidVC.swift; sourceTree = "<group>"; };
@@ -121,6 +131,7 @@
 		8706AB762A9FBE9C007D6DA4 /* TehnoleasingCabinet */ = {
 			isa = PBXGroup;
 			children = (
+				874140232B0DE40700D8BE76 /* Trash */,
 				8706AB8E2A9FCCB9007D6DA4 /* Support */,
 				8706AB8D2A9FCCB2007D6DA4 /* Controller */,
 				8706AB8C2A9FCCA9007D6DA4 /* View */,
@@ -150,6 +161,8 @@
 				87EA8F8B2AD424AE00331A32 /* RadioButton.swift */,
 				87DFE4D72AF94401004ACC4D /* PayCell.swift */,
 				87DFE4DB2AFA37BD004ACC4D /* BidCell.swift */,
+				87D63F602B0F6B0700583AD5 /* SettingTableViewCell.swift */,
+				87D63F642B0F8AC200583AD5 /* SwitchTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,15 +170,17 @@
 		8706AB8D2A9FCCB2007D6DA4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8741401E2B0A1D3400D8BE76 /* Policy */,
 				87789A6B2ACEE234002FDE0C /* LoginReg */,
 				87EE7B162AC7061A00161D9F /* Tariff */,
 				87EE7B0D2AC6BDE000161D9F /* AgentDogovor */,
 				8706AB7B2A9FBE9C007D6DA4 /* ViewOnBorading.swift */,
-				8754F86B2AA4BB34008F4596 /* ViewController.swift */,
 				87EE7B142AC6BFC500161D9F /* TabController.swift */,
 				87EE7B1B2AC9A1DE00161D9F /* ProfileVC.swift */,
 				87DFE4D52AF94368004ACC4D /* PayVC.swift */,
 				87DFE4D92AFA377D004ACC4D /* BidVC.swift */,
+				87D63F5E2B0F4B0E00583AD5 /* SettingsVC.swift */,
+				87D63F622B0F87E700583AD5 /* NotificationsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,6 +194,27 @@
 				8706AB822A9FBE9D007D6DA4 /* LaunchScreen.storyboard */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		8741401E2B0A1D3400D8BE76 /* Policy */ = {
+			isa = PBXGroup;
+			children = (
+				8741401F2B0A1D7800D8BE76 /* PersonPolicyVC.swift */,
+				874140212B0CC6D600D8BE76 /* PolicyIpAndFisVC.swift */,
+			);
+			path = Policy;
+			sourceTree = "<group>";
+		};
+		874140232B0DE40700D8BE76 /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				872CD86C2AEA4317004C37D3 /* AgentFormIP2VC.swift */,
+				872CD8702AEA545D004C37D3 /* AgentFormUR2VC.swift */,
+				87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */,
+				87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */,
+				87EA8F892AD421CE00331A32 /* BidStep4VC.swift */,
+			);
+			path = Trash;
 			sourceTree = "<group>";
 		};
 		8754F83E2AA4922E008F4596 /* Extension */ = {
@@ -205,12 +241,10 @@
 			isa = PBXGroup;
 			children = (
 				87EE7B0E2AC6BE1B00161D9F /* AgentContractVC.swift */,
-				87789A692ACD7FAE002FDE0C /* AgentFormPhysical.swift */,
 				87B88F082AE8F7F800D9D9A8 /* AgentSMSVC.swift */,
-				87B88F0A2AE952D600D9D9A8 /* AgentFromIPVC.swift */,
-				872CD86C2AEA4317004C37D3 /* AgentFormIP2VC.swift */,
+				87789A692ACD7FAE002FDE0C /* AgentFormPhysical.swift */,
 				872CD86E2AEA53E4004C37D3 /* AgentFromURVC.swift */,
-				872CD8702AEA545D004C37D3 /* AgentFormUR2VC.swift */,
+				87B88F0A2AE952D600D9D9A8 /* AgentFromIPVC.swift */,
 			);
 			path = AgentDogovor;
 			sourceTree = "<group>";
@@ -220,9 +254,6 @@
 			children = (
 				87EE7B102AC6BEB900161D9F /* MyBidVC.swift */,
 				87EE7B192AC723D400161D9F /* TarrifBidVC.swift */,
-				87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */,
-				87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */,
-				87EA8F892AD421CE00331A32 /* BidStep4VC.swift */,
 				87DFE4DD2AFA39B0004ACC4D /* BidSendSMS.swift */,
 			);
 			path = Tariff;
@@ -300,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87B1CE182AA4DFC5002F72B9 /* AskLabel.swift in Sources */,
+				874140202B0A1D7800D8BE76 /* PersonPolicyVC.swift in Sources */,
 				87789A6D2ACEE62D002FDE0C /* BidStep2VC.swift in Sources */,
 				87EE7B152AC6BFC500161D9F /* TabController.swift in Sources */,
 				87789A6F2ACEF3CF002FDE0C /* BidStep3VC.swift in Sources */,
@@ -309,16 +341,19 @@
 				87EE7B1C2AC9A1DE00161D9F /* ProfileVC.swift in Sources */,
 				872CD86D2AEA4317004C37D3 /* AgentFormIP2VC.swift in Sources */,
 				87B88F072AE8F53700D9D9A8 /* ButtonAnimation.swift in Sources */,
+				87D63F632B0F87E700583AD5 /* NotificationsVC.swift in Sources */,
 				87DFE4D62AF94368004ACC4D /* PayVC.swift in Sources */,
 				87DFE4DC2AFA37BD004ACC4D /* BidCell.swift in Sources */,
 				8754F8422AA4936F008F4596 /* RegVC.swift in Sources */,
 				8706AB7C2A9FBE9C007D6DA4 /* ViewOnBorading.swift in Sources */,
 				8754F8442AA4A755008F4596 /* CheckBoxButton.swift in Sources */,
 				87789A6A2ACD7FAE002FDE0C /* AgentFormPhysical.swift in Sources */,
-				8754F86C2AA4BB34008F4596 /* ViewController.swift in Sources */,
 				872CD8712AEA545D004C37D3 /* AgentFormUR2VC.swift in Sources */,
 				87EE7B1E2ACC5B1E00161D9F /* NSMutableAttributedString.swift in Sources */,
+				87D63F5F2B0F4B0E00583AD5 /* SettingsVC.swift in Sources */,
 				87DFE4DE2AFA39B0004ACC4D /* BidSendSMS.swift in Sources */,
+				87D63F612B0F6B0700583AD5 /* SettingTableViewCell.swift in Sources */,
+				87D63F652B0F8AC200583AD5 /* SwitchTableViewCell.swift in Sources */,
 				87EE7B112AC6BEB900161D9F /* MyBidVC.swift in Sources */,
 				87B1CE162AA4CE8D002F72B9 /* FormLabel.swift in Sources */,
 				87B1CE142AA4CD5F002F72B9 /* CustomTextField.swift in Sources */,
@@ -326,6 +361,7 @@
 				87B88F092AE8F7F800D9D9A8 /* AgentSMSVC.swift in Sources */,
 				8706AB782A9FBE9C007D6DA4 /* AppDelegate.swift in Sources */,
 				8754F8402AA4924D008F4596 /* TextFieldExtension.swift in Sources */,
+				874140222B0CC6D600D8BE76 /* PolicyIpAndFisVC.swift in Sources */,
 				87EE7B0F2AC6BE1B00161D9F /* AgentContractVC.swift in Sources */,
 				87DFE4D82AF94401004ACC4D /* PayCell.swift in Sources */,
 				87EA8F8A2AD421CE00331A32 /* BidStep4VC.swift in Sources */,

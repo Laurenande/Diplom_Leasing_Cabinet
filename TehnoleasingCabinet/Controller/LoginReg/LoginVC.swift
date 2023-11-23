@@ -26,8 +26,6 @@ class LoginVC: UIViewController {
         button.addTarget(self,
                          action: #selector(buttonActionReg),
                          for: .touchUpInside)
-        button.alpha = 0.5
-        button.isEnabled = false
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -52,7 +50,7 @@ class LoginVC: UIViewController {
         return label
     }()
     //Form Login
-    private let phoneLabel = FormLabel(text: "Номер телефона")
+    private let phoneLabel = FormLabel(text: "Номер телефона:")
     private let phoneTextfield = CustomTextField(placeholder: "+7 (999) 999-99-99", keyboard: .number)
     
     let stack = UIStackView()
@@ -158,13 +156,9 @@ extension LoginVC: UITextFieldDelegate{
         if phoneTextfield.text?.count == 18{
             buttonLogin.alpha = 1
             buttonLogin.isEnabled = true
-            buttonReg.alpha = 1
-            buttonReg.isEnabled = true
         }else{
             buttonLogin.alpha = 0.5
             buttonLogin.isEnabled = false
-            buttonReg.alpha = 0.5
-            buttonReg.isEnabled = false
         }
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

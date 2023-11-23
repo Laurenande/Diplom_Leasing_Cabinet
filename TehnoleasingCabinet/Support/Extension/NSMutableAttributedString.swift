@@ -62,7 +62,8 @@ extension NSMutableAttributedString {
         
         let attributes:[NSAttributedString.Key : Any] = [
             .font :  normalFont,
-            .underlineStyle : NSUnderlineStyle.single.rawValue
+            .underlineStyle : NSUnderlineStyle.single.rawValue,
+            
             
         ]
         
