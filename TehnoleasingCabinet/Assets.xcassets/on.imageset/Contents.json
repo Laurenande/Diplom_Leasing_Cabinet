@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "checkBox_off.png",
+      "filename" : "on.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
