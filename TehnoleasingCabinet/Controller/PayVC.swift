@@ -52,6 +52,8 @@ class PayVC: UIViewController {
         setConstraints()
         
         
+        
+        
     }
     
     func setViews(){
@@ -83,25 +85,7 @@ extension PayVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollect
         return CGFloat(20)
     }
     
-    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        configureContextMenu(index: indexPath.row)
-    }
     
-    func configureContextMenu(index: Int) -> UIContextMenuConfiguration{
-        let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
-            
-            let edit = UIAction(title: "Обращени", image: UIImage(systemName: "info.bubble"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
-                print("edit button clicked")
-            }
-            let cancel = UIAction(title: "Отменить", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
-                print("edit button clicked")
-            }
-            
-            return UIMenu(title: "Действие", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [edit,cancel])
-            
-        }
-        return context
-    }
      
 }
 //MARK: - Set constraints

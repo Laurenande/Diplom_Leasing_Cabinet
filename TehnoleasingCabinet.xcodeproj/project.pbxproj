@@ -22,6 +22,9 @@
 		8754F8402AA4924D008F4596 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F83F2AA4924D008F4596 /* TextFieldExtension.swift */; };
 		8754F8422AA4936F008F4596 /* RegVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F8412AA4936F008F4596 /* RegVC.swift */; };
 		8754F8442AA4A755008F4596 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F8432AA4A755008F4596 /* CheckBoxButton.swift */; };
+		876B3CC52B13576100B48E3F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 876B3CC42B13576100B48E3F /* Alamofire */; };
+		876B3CC72B1359D300B48E3F /* DaDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B3CC62B1359D300B48E3F /* DaDataModel.swift */; };
+		876B3CC92B135A7400B48E3F /* NetworkServideWithAF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B3CC82B135A7400B48E3F /* NetworkServideWithAF.swift */; };
 		87789A6A2ACD7FAE002FDE0C /* AgentFormPhysical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87789A692ACD7FAE002FDE0C /* AgentFormPhysical.swift */; };
 		87789A6D2ACEE62D002FDE0C /* BidStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */; };
 		87789A6F2ACEF3CF002FDE0C /* BidStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */; };
@@ -70,6 +73,8 @@
 		8754F83F2AA4924D008F4596 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		8754F8412AA4936F008F4596 /* RegVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegVC.swift; sourceTree = "<group>"; };
 		8754F8432AA4A755008F4596 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
+		876B3CC62B1359D300B48E3F /* DaDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaDataModel.swift; sourceTree = "<group>"; };
+		876B3CC82B135A7400B48E3F /* NetworkServideWithAF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServideWithAF.swift; sourceTree = "<group>"; };
 		87789A692ACD7FAE002FDE0C /* AgentFormPhysical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentFormPhysical.swift; sourceTree = "<group>"; };
 		87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidStep2VC.swift; sourceTree = "<group>"; };
 		87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidStep3VC.swift; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				876B3CC52B13576100B48E3F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +151,7 @@
 		8706AB8B2A9FCC9C007D6DA4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				876B3CC62B1359D300B48E3F /* DaDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -152,17 +159,13 @@
 		8706AB8C2A9FCCA9007D6DA4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87D63F682B0F9E2300583AD5 /* Button */,
+				87D63F672B0F9E0D00583AD5 /* CollectionCell */,
+				87D63F662B0F9DF700583AD5 /* TableCell */,
 				8706AB8F2AA07B23007D6DA4 /* OnBoardingView.swift */,
-				8754F8432AA4A755008F4596 /* CheckBoxButton.swift */,
 				87B1CE132AA4CD5F002F72B9 /* CustomTextField.swift */,
 				87B1CE152AA4CE8D002F72B9 /* FormLabel.swift */,
 				87B1CE172AA4DFC5002F72B9 /* AskLabel.swift */,
-				87B1CE192AA4F3C4002F72B9 /* TehnoBlueButton.swift */,
-				87EA8F8B2AD424AE00331A32 /* RadioButton.swift */,
-				87DFE4D72AF94401004ACC4D /* PayCell.swift */,
-				87DFE4DB2AFA37BD004ACC4D /* BidCell.swift */,
-				87D63F602B0F6B0700583AD5 /* SettingTableViewCell.swift */,
-				87D63F642B0F8AC200583AD5 /* SwitchTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				87DFE4D92AFA377D004ACC4D /* BidVC.swift */,
 				87D63F5E2B0F4B0E00583AD5 /* SettingsVC.swift */,
 				87D63F622B0F87E700583AD5 /* NotificationsVC.swift */,
+				876B3CC82B135A7400B48E3F /* NetworkServideWithAF.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,6 +241,34 @@
 			path = LoginReg;
 			sourceTree = "<group>";
 		};
+		87D63F662B0F9DF700583AD5 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				87D63F602B0F6B0700583AD5 /* SettingTableViewCell.swift */,
+				87D63F642B0F8AC200583AD5 /* SwitchTableViewCell.swift */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		87D63F672B0F9E0D00583AD5 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				87DFE4D72AF94401004ACC4D /* PayCell.swift */,
+				87DFE4DB2AFA37BD004ACC4D /* BidCell.swift */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		87D63F682B0F9E2300583AD5 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				8754F8432AA4A755008F4596 /* CheckBoxButton.swift */,
+				87B1CE192AA4F3C4002F72B9 /* TehnoBlueButton.swift */,
+				87EA8F8B2AD424AE00331A32 /* RadioButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		87EE7B0D2AC6BDE000161D9F /* AgentDogovor */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +307,9 @@
 			dependencies = (
 			);
 			name = TehnoleasingCabinet;
+			packageProductDependencies = (
+				876B3CC42B13576100B48E3F /* Alamofire */,
+			);
 			productName = TehnoleasingCabinet;
 			productReference = 8706AB742A9FBE9C007D6DA4 /* TehnoleasingCabinet.app */;
 			productType = "com.apple.product-type.application";
@@ -304,6 +339,9 @@
 				ru,
 			);
 			mainGroup = 8706AB6B2A9FBE9C007D6DA4;
+			packageReferences = (
+				876B3CC32B13576100B48E3F /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 8706AB752A9FBE9C007D6DA4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -336,6 +374,7 @@
 				87EE7B152AC6BFC500161D9F /* TabController.swift in Sources */,
 				87789A6F2ACEF3CF002FDE0C /* BidStep3VC.swift in Sources */,
 				87DFE4DA2AFA377D004ACC4D /* BidVC.swift in Sources */,
+				876B3CC92B135A7400B48E3F /* NetworkServideWithAF.swift in Sources */,
 				87B1CE1A2AA4F3C4002F72B9 /* TehnoBlueButton.swift in Sources */,
 				872CD86F2AEA53E4004C37D3 /* AgentFromURVC.swift in Sources */,
 				87EE7B1C2AC9A1DE00161D9F /* ProfileVC.swift in Sources */,
@@ -356,6 +395,7 @@
 				87D63F652B0F8AC200583AD5 /* SwitchTableViewCell.swift in Sources */,
 				87EE7B112AC6BEB900161D9F /* MyBidVC.swift in Sources */,
 				87B1CE162AA4CE8D002F72B9 /* FormLabel.swift in Sources */,
+				876B3CC72B1359D300B48E3F /* DaDataModel.swift in Sources */,
 				87B1CE142AA4CD5F002F72B9 /* CustomTextField.swift in Sources */,
 				8706AB902AA07B23007D6DA4 /* OnBoardingView.swift in Sources */,
 				87B88F092AE8F7F800D9D9A8 /* AgentSMSVC.swift in Sources */,
@@ -587,6 +627,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		876B3CC32B13576100B48E3F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		876B3CC42B13576100B48E3F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 876B3CC32B13576100B48E3F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8706AB6C2A9FBE9C007D6DA4 /* Project object */;
 }

@@ -272,6 +272,8 @@ class MyBidVC: UIViewController {
         avansTextfield.inputView = typePicker
         avansTextfield.delegate = self
         
+    
+        
         datePicker.delegate = self
         datePicker.dataSource = self
         dateTextfield.inputView = datePicker
@@ -381,6 +383,8 @@ extension MyBidVC: UITextFieldDelegate{
             nextButton.alpha = 0.5
             nextButton.isEnabled = false
         }
+        
+        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

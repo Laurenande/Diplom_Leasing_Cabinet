@@ -8,8 +8,8 @@
 import UIKit
 import MobileCoreServices
 import UniformTypeIdentifiers
-class AgentFromIPVC: UIViewController, UITextFieldDelegate {
-
+class AgentFromIPVC: UIViewController {
+    
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll
@@ -47,7 +47,7 @@ class AgentFromIPVC: UIViewController, UITextFieldDelegate {
         let textfield = CustomTextField(placeholder: "798635783", keyboard: .number)
         return textfield
     }()
-
+    
     private let innStack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -249,7 +249,7 @@ class AgentFromIPVC: UIViewController, UITextFieldDelegate {
         navigationItem.title = "Договор для ИП"
         innStackLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+        innTextfield.delegate = self
         setViews()
         setConstraints()
         // Do any additional setup after loading the view.
@@ -328,6 +328,21 @@ class AgentFromIPVC: UIViewController, UITextFieldDelegate {
         
     }
     
+    func convertDate(date: Int) -> String{
+        let timestamp = date
+        let date = Date(timeIntervalSince1970: TimeInterval(timestamp) / 1000)
+        
+        // Шаг 2: Извлечь день, месяц и год
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day, .month, .year], from: date)
+        
+        if let day = components.day, let month = components.month, let year = components.year {
+            // Шаг 3: Сформировать строку в формате "день.месяц.год"
+            let formattedDate = String(format: "%02d.%02d.%d", day, month, year)
+            return formattedDate
+        }
+        return ""
+    }
 }
 
 
@@ -402,6 +417,33 @@ extension AgentFromIPVC: UIDocumentPickerDelegate{
                 pdfPassport2_3Textfield.text = fileName
             }else{
                 pdfPassport4_5Textfield.text = fileName
+            }
+        }
+    }
+}
+
+
+extension AgentFromIPVC: UITextFieldDelegate{
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+        
+        if textField == innTextfield{
+            NetworkServideWithAF.shared.fetchData(parapms: innTextfield.text!) { result in
+                
+                switch result {
+                case .success(let data):
+                    //for index in 0...data.suggestions.count-1{
+                    if !data.suggestions.isEmpty {
+                        self.innAPILabel.text = data.suggestions[0].data.inn
+                        self.dateAPILabel.text = self.convertDate(date: data.suggestions[0].data.state.registrationDate)
+                        self.adressAPILabel.text = data.suggestions[0].data.address.value
+                    }
+                    //}
+                    
+                case .failure(let error):
+                    print(error)
+                }
+                
             }
         }
     }
