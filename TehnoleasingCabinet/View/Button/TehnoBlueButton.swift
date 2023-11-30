@@ -23,7 +23,5 @@ class TehnoBlueButton: UIButton {
         backgroundColor = #colorLiteral(red: 0.1129455492, green: 0.2492182851, blue: 0.3852708042, alpha: 1)
         layer.cornerRadius = 14
         translatesAutoresizingMaskIntoConstraints = false
-        
     }
-    
 }

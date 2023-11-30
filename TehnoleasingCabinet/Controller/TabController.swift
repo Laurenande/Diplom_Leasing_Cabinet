@@ -13,7 +13,7 @@ class TabController: UITabBarController {
         super.viewDidLoad()
         setupTabs()
         selectedIndex = 1
-        overrideUserInterfaceStyle = .light
+        //overrideUserInterfaceStyle = .light
         // Do any additional setup after loading the view.
     }
     
@@ -32,8 +32,8 @@ class TabController: UITabBarController {
         //nav.overrideUserInterfaceStyle = .dark
         nav.tabBarItem.title = title
         nav.tabBarItem.image = image
-        nav.navigationBar.tintColor = #colorLiteral(red: 0, green: 0.3430749774, blue: 0.5971426964, alpha: 1)
-        UITabBar.appearance().tintColor = #colorLiteral(red: 0, green: 0.3430749774, blue: 0.5971426964, alpha: 1)
+        //nav.navigationBar.tintColor = #colorLiteral(red: 0, green: 0.3430749774, blue: 0.5971426964, alpha: 1)
+        //UITabBar.appearance().tintColor = #colorLiteral(red: 0, green: 0.3430749774, blue: 0.5971426964, alpha: 1)
         //UITabBar.appearance().overrideUserInterfaceStyle = .dark
         // correct the transparency bug for Tab bars
         let tabBarAppearance = UITabBarAppearance()

@@ -13,7 +13,7 @@ class AgentFromIPVC: UIViewController {
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll
-            .backgroundColor = .white
+            .backgroundColor = .systemBackground
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
@@ -245,7 +245,7 @@ class AgentFromIPVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         navigationItem.title = "Договор для ИП"
         innStackLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.translatesAutoresizingMaskIntoConstraints = false

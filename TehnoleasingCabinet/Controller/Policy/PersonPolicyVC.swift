@@ -11,21 +11,21 @@ class PersonPolicyVC: UIViewController {
 
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll.backgroundColor = .systemGray6
-        scroll.overrideUserInterfaceStyle = .light
+        scroll.backgroundColor = .systemBackground
+        //scroll.overrideUserInterfaceStyle = .light
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
     private let contentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = .systemBackground
         view.overrideUserInterfaceStyle = .light
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     private let labelInfo: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .label
         //label.font = .boldSystemFont(ofSize: 14)
         label.font = .systemFont(ofSize: 14)
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -48,7 +48,7 @@ class PersonPolicyVC: UIViewController {
         contentView.addSubview(labelInfo)
         labelInfo.text = textdd
         
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = .systemBackground
         setConstraints()
         // Do any additional setup after loading the view.
     }

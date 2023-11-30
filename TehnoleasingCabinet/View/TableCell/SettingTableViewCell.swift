@@ -76,5 +76,4 @@ class SettingTableViewCell: UITableViewCell {
         iconImageView.alpha = 0.5
         iconContainer.alpha = 0.5
     }
-    
 }

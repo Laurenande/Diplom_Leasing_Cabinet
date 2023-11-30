@@ -13,7 +13,7 @@ class MyBidVC: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll.backgroundColor = .white
+        scroll.backgroundColor = .systemBackground
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
@@ -133,7 +133,7 @@ class MyBidVC: UIViewController {
         textview.backgroundColor = UIColor.secondarySystemBackground
         textview.layer.borderColor = UIColor.systemFill.cgColor
         textview.layer.borderWidth = CGFloat(1)
-        textview.textColor = UIColor.black
+        textview.textColor = UIColor.secondaryLabel
         textview.font = UIFont(name: "Verdana", size: 14)
         textview.isSelectable = true
         textview.isEditable = false
@@ -221,7 +221,7 @@ class MyBidVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .systemBackground
         navigationItem.title = "Новая заявка на лизинг"
         
         setViews()

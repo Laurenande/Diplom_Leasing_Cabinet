@@ -11,21 +11,21 @@ class PolicyIpAndFisVC: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll.backgroundColor = .systemGray6
-        scroll.overrideUserInterfaceStyle = .light
+        scroll.backgroundColor = .systemBackground
+        //scroll.overrideUserInterfaceStyle = .light
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
     private let contentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray6
-        view.overrideUserInterfaceStyle = .light
+        view.backgroundColor = .systemBackground
+        //view.overrideUserInterfaceStyle = .light
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     private let labelInfo: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .label
         //label.font = .boldSystemFont(ofSize: 14)
         label.font = .systemFont(ofSize: 14)
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -68,7 +68,7 @@ class PolicyIpAndFisVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setText()
-        navigationController?.overrideUserInterfaceStyle = .light
+        //navigationController?.overrideUserInterfaceStyle = .light
         //navigationItem.titleView?.overrideUserInterfaceStyle = .light
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeView(_: )))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(closeView(_: )))
@@ -77,7 +77,7 @@ class PolicyIpAndFisVC: UIViewController {
         contentView.addSubview(segmentControl)
         contentView.addSubview(labelInfo)
         labelInfo.text = textdd
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = .systemBackground
         setConstraints()
         // Do any additional setup after loading the view.
     }

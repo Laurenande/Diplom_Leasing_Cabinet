@@ -11,7 +11,7 @@ import UniformTypeIdentifiers
 class AgentFromURVC: UIViewController {
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll.backgroundColor = .white
+        scroll.backgroundColor = .systemBackground
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
@@ -261,7 +261,7 @@ class AgentFromURVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         navigationItem.title = "Договор для Юр. лиц"
         innStackLabel.translatesAutoresizingMaskIntoConstraints = false
         innTextfield.delegate = self

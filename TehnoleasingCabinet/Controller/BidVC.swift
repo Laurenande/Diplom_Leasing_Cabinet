@@ -11,7 +11,7 @@ class BidVC: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll.backgroundColor = .systemGray6
+        scroll.backgroundColor = .systemBackground
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
@@ -32,8 +32,8 @@ class BidVC: UIViewController {
         coll.register(BidCell.self, forCellWithReuseIdentifier: "cell")
         coll.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         coll.translatesAutoresizingMaskIntoConstraints = false
-        coll.overrideUserInterfaceStyle = .light
-        coll.backgroundColor = .systemGray6
+        //coll.overrideUserInterfaceStyle = .light
+        coll.backgroundColor = .systemBackground
         return coll
     }()
     

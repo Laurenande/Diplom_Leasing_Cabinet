@@ -14,8 +14,7 @@ class AgentContractVC: UIViewController {
     ///All objects are added to this scroll
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll
-            .backgroundColor = .white
+        scroll.backgroundColor = .systemBackground
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
@@ -37,7 +36,7 @@ class AgentContractVC: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .label
         label.font = .boldSystemFont(ofSize: 16)
         //label.font = .italicSystemFont(ofSize: 14)
         label.textAlignment = .justified
@@ -114,7 +113,7 @@ class AgentContractVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Агенсткий договор"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         facePicker.delegate = self
         facePicker.dataSource = self
         contractTextfield.inputView = facePicker

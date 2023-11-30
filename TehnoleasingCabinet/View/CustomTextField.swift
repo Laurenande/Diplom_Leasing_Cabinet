@@ -40,11 +40,8 @@ class CustomTextField: UITextField, UITextFieldDelegate {
         addTarget(self, action: #selector(applyActiveStyles), for: UIControl.Event.editingDidBegin)
         addTarget(self, action: #selector(applyDefaultStyles), for: UIControl.Event.editingDidEnd)
         
-        
         contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        overrideUserInterfaceStyle = .light
-        
-        
+        //overrideUserInterfaceStyle = .light
     }
     
     @objc func applyActiveStyles() {
@@ -57,6 +54,4 @@ class CustomTextField: UITextField, UITextFieldDelegate {
         layer.borderColor = .none
         layer.borderWidth = 0
     }
-
-    
 }

@@ -11,7 +11,7 @@ class ProfileVC: UIViewController {
 
     private let fioLabel: UILabel = {
        let label = UILabel()
-        label.textColor = .black
+        label.textColor = .label
         label.text = "Куракин Егор Андреевич"
         label.font = .boldSystemFont(ofSize: 20)
         //label.font = .italicSystemFont(ofSize: 14)
@@ -22,7 +22,7 @@ class ProfileVC: UIViewController {
     }()
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "AppIcon")
+        imageView.image = UIImage(named: "logo")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,8 +75,7 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        
+        view.backgroundColor = .systemBackground
         navigationItem.title = "Профиль"
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .done, target: self, action: #selector(settingsButton))

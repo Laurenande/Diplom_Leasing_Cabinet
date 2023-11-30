@@ -45,9 +45,9 @@ class PayCell: UICollectionViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 12
-        view.backgroundColor = #colorLiteral(red: 0.9899999499, green: 0.9899999499, blue: 0.9899999499, alpha: 1)
+        view.backgroundColor = .tertiarySystemBackground
         //view.backgroundColor = .secondarySystemBackground
-        view.overrideUserInterfaceStyle = .dark
+        //view.overrideUserInterfaceStyle = .dark
         view.layer.cornerRadius = 12
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.3
@@ -206,7 +206,7 @@ class ApiPayLabel: UILabel {
         font = .boldSystemFont(ofSize: 14)
         sizeToFit()
         text = textInit
-        textColor = .black
+        textColor = .label
         textAlignment = .left
         numberOfLines = 1
         frame.size = CGSize(width: 100, height: 200)

@@ -7,7 +7,6 @@
 
 import Foundation
 import Alamofire
-
 class NetworkServideWithAF{
     static let shared = NetworkServideWithAF(); private init() { }
     
@@ -15,7 +14,8 @@ class NetworkServideWithAF{
         
         let url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/party"
         
-        let headers: Parameters = [
+        //Передаваемый параметры
+        let params: Parameters = [
             "Content-Type": "application/json",
             "Accept": "application/json",
             "token": "ff166055839d5058ebe6df03943ca57d795737f8",
@@ -23,7 +23,7 @@ class NetworkServideWithAF{
             
         ]
         
-        AF.request(url, method: .get, parameters: headers ).responseDecodable(of: DaDataStruct.self) { response in
+        AF.request(url, method: .get, parameters: params ).responseDecodable(of: DaDataStruct.self) { response in
             guard let data = response.data else {
                 if let error = response.error{
                     complition(.failure(error))
@@ -36,6 +36,5 @@ class NetworkServideWithAF{
             }
             complition(.success(daData))
         }
-        
     }
 }

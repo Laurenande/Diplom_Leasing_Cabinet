@@ -19,7 +19,7 @@ class AskLabel: UILabel {
     
     private func setupLabel(textInit: String) {
         font = UIFont.systemFont(ofSize: 13)
-        textColor = .black
+        textColor = .label
         textAlignment = .left
         numberOfLines = 0
         text = textInit

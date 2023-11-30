@@ -21,7 +21,7 @@ class FormLabel: UILabel {
     private func setupLabel(textInit: String) {
         text = textInit
         font = UIFont.systemFont(ofSize: 15)
-        textColor = .black
+        textColor = .label
         textAlignment = .left
         numberOfLines = 1
         frame.size = CGSize(width: 100, height: 200)

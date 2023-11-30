@@ -94,7 +94,5 @@ class SwitchTableViewCell: UITableViewCell {
         iconImageView.alpha = 0.5
         iconContainer.alpha = 0.5
     }
-    
     public func isOnSwitch() -> Bool{return mySwitch.isOn}
-    
 }

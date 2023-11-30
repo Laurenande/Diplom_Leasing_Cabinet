@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoText" translatesAutoresizingMaskIntoConstraints="NO" id="kon-3R-ZOb">
-                                <rect key="frame" x="-207.66666666666666" y="391" width="808.33333333333337" height="70"/>
+                                <rect key="frame" x="73.666666666666671" y="391" width="245.66666666666663" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="ZAH-V7-DH4"/>
                                 </constraints>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logoText" width="808" height="174"/>
+        <image name="logoText" width="245.66667175292969" height="46.333332061767578"/>
     </resources>
 </document>

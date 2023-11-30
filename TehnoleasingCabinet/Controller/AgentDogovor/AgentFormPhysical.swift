@@ -12,8 +12,7 @@ class AgentFormPhysical: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll
-            .backgroundColor = .white
+        scroll.backgroundColor = .systemBackground
         scroll.translatesAutoresizingMaskIntoConstraints = false
         return scroll
     }()
@@ -168,7 +167,7 @@ class AgentFormPhysical: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         navigationItem.title = "Договор для Физ. лиц"
         setViews()
         setConstraints()
