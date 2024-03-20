@@ -83,7 +83,7 @@ class LoginVC: UIViewController {
         let new = phoneTextfield.text?.replacingOccurrences(of: " (", with: "")
         let new2 = new?.replacingOccurrences(of: ") ", with: "")
         let new3 = new2?.replacingOccurrences(of: "-", with: "")
-        UserDefaults.standard.setValue(new3!, forKey: "loginPhone")
+        UserDefaults.standard.setValue(new3!, forKey: "phone")
         let VCSendSms = LoginCodeVC()
         buttonLogin.zoomInWithEasing()
         VCSendSms.modalPresentationStyle = .fullScreen

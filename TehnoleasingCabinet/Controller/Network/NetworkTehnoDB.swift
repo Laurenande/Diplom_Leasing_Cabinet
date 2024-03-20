@@ -50,7 +50,7 @@ class NetworkTehnoDB{
             }
     }
     
-    func getAppsOrAgentsForPhone(parapms: String, complition: @escaping (Result<[Apps], Error>) -> ()){
+    func getAppsOrAgentsForPhone(parapms: String, complition: @escaping (Result<[Apps], Error>) -> Void){
         
         let url = "http://10.211.55.5:3003/api/apps/\(parapms)"
         AF.request(url, method: .get ).responseDecodable(of: Apps.self) { response in

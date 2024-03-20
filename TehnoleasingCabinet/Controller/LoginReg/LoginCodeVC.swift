@@ -262,7 +262,7 @@ extension LoginCodeVC: UITextFieldDelegate{
         return newLength <= 6
     }
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if textField.text?.count == 6{
+        if textField.text?.count == 5{
             nextButton.alpha = 1
             dismissMyKeyboard()
             nextButton.isEnabled = true
