@@ -72,7 +72,9 @@ class ProfileVC: UIViewController {
         
         navigationController?.pushViewController(VCReg, animated: true)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        loadProfileData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -102,6 +104,23 @@ class ProfileVC: UIViewController {
         formStack.addArrangedSubview(contractTextfield)
         
     }
+    
+    func loadProfileData() {
+        let phoneCache = UserDefaults.standard.string(forKey: "phone")!
+        NetworkTehnoDB.shared.getAgentsForPhone(parapms: phoneCache) { result in
+            switch result {
+            case .success(let agent):
+                self.fioLabel.text = agent.surname
+                self.mailTextfield.text = agent.email
+                self.phoneTextfield.text = agent.phone
+            case .failure(_): break
+                //self.present(VCReg, animated: true, completion: nil)
+                //print(error)
+            }
+        }
+    }
+    
+    
 
 }
 extension ProfileVC{

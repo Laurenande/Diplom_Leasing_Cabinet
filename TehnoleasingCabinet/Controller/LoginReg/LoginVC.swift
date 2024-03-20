@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginVC: UIViewController {
-
+    
     private lazy var buttonLogin: TehnoBlueButton = {
         let button = TehnoBlueButton(title: "Вход")
         button.alpha = 0.5
@@ -80,6 +80,10 @@ class LoginVC: UIViewController {
         view.addSubview(stack)
     }
     @objc func buttonActionLogin() {
+        let new = phoneTextfield.text?.replacingOccurrences(of: " (", with: "")
+        let new2 = new?.replacingOccurrences(of: ") ", with: "")
+        let new3 = new2?.replacingOccurrences(of: "-", with: "")
+        UserDefaults.standard.setValue(new3!, forKey: "loginPhone")
         let VCSendSms = LoginCodeVC()
         buttonLogin.zoomInWithEasing()
         VCSendSms.modalPresentationStyle = .fullScreen
@@ -87,21 +91,41 @@ class LoginVC: UIViewController {
     }
     
     @objc func buttonActionReg() {
-        let VCReg = RegVC()
-        VCReg.modalPresentationStyle = .fullScreen
-        present(VCReg, animated: true, completion: nil)
-       }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+         let VCReg = RegVC()
+         //VCReg.modalPresentationStyle = .fullScreen
+         
+        //self.present(VCReg, animated: true, completion: nil)
+        
+        let new = phoneTextfield.text?.replacingOccurrences(of: " (", with: "")
+        let new2 = new?.replacingOccurrences(of: ") ", with: "")
+        let new3 = new2?.replacingOccurrences(of: "-", with: "")
+        let dest = RegVC(nibName:"RegVC", bundle: nil)
+        VCReg.phoneTextfield.text = phoneTextfield.text
+        NetworkTehnoDB.shared.getAgentsForPhone(parapms: new3!) { result in
+            switch result {
+            case .success(_):
+                let alert = UIAlertController(title: "Номер зарегистрирован", message: "Такой номер уже зарегистрирован. Выполните вход.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+            case .failure(_):
+                self.present(VCReg, animated: true, completion: nil)
+                //print(error)
+            }
+        }
+        
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 
@@ -136,23 +160,23 @@ extension LoginVC{
     }
     
     func initializeHideKeyboard(){
-     //Declare a Tap Gesture Recognizer which will trigger our dismissMyKeyboard() function
-     let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-     target: self,
-     action: #selector(dismissMyKeyboard))
-     //Add this tap gesture recognizer to the parent view
-     view.addGestureRecognizer(tap)
-     }
-     @objc func dismissMyKeyboard(){
-     //endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
-     //In short- Dismiss the active keyboard.
-     view.endEditing(true)
-     }
+        //Declare a Tap Gesture Recognizer which will trigger our dismissMyKeyboard() function
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        //Add this tap gesture recognizer to the parent view
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissMyKeyboard(){
+        //endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
+        //In short- Dismiss the active keyboard.
+        view.endEditing(true)
+    }
 }
 
 extension LoginVC: UITextFieldDelegate{
     func textFieldDidChangeSelection(_ textField: UITextField) {
-
+        
         if phoneTextfield.text?.count == 18{
             buttonLogin.alpha = 1
             buttonLogin.isEnabled = true

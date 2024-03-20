@@ -147,7 +147,8 @@ class MyBidVC: UIViewController {
         return textview
     }()
     var placeholderLabel : UILabel!
-    
+    //Работа с файлами
+    let defaults = UserDefaults.standard
     private let balanceLabel = FormLabel(text: "Баланс клиента за последний отчетный период")
     private let balanceTextfield: CustomTextField = {
         let textfield = CustomTextField(placeholder: "Выберите файл ", keyboard: .adc)
@@ -163,6 +164,7 @@ class MyBidVC: UIViewController {
         return button
     }()
     private var selectTextfieldFile = 0
+    
     @objc func selectFile1() {
         //let VCReg = AgentFormPhysical()
         //navigationController?.pushViewController(VCReg, animated: true)
@@ -174,6 +176,7 @@ class MyBidVC: UIViewController {
         let textfield = CustomTextField(placeholder: "Выберите файл ", keyboard: .adc)
         return textfield
     }()
+    
     private lazy var selectFileButton1: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Выбрать файл", for: .normal)
@@ -214,6 +217,22 @@ class MyBidVC: UIViewController {
     }()
     @objc func buttonAction() {
         let VCReg = BidSendSMS()
+        print("INN:\(innTextfield.text)")
+        print("Price:\(priceTextfield.text)")
+        print("fio:\(fioTextfield.text)")
+        print("phone:\(phoneTextfield.text)")
+        print("stavka:\(stavkaTextfield.text)")
+        print("name:\(nameTextfield.text)")
+        print("avans:\(avansTextfield.text)")
+        print("date:\(dateTextfield.text)")
+        print("porych:\(checkBox1.isSelected)")
+        print("predmet:\(checkBox2.isSelected)")
+        print("vozvrat:\(checkBox3.isSelected)")
+        print("note:\(noteTextView.text)")
+        print("balance:\(noteTextView.text)")
+        print("manager:\(managerTextfield.text)")
+        print(defaults.object(forKey: "BALANCE"))
+        print(defaults.object(forKey: "KP"))
         nextButton.zoomInWithEasing()
         navigationController?.pushViewController(VCReg, animated: true)
     }
@@ -253,10 +272,10 @@ class MyBidVC: UIViewController {
         pickerViewController.shouldShowFileExtensions = true
         selectTextfieldFile = tag
         //self.present(pickerViewController, animated: true, completion: nil)
+        
         self.present(pickerViewController, animated: true) {
             //self.pdfPassport2_3Textfield.becomeFirstResponder()
         }
-        
     }
     
     func setViews() {
@@ -376,7 +395,7 @@ extension MyBidVC: UITextFieldDelegate{
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
 
-        if innTextfield.text?.count ?? 0 > 7 && fioTextfield.text?.count ?? 0 > 10 && priceTextfield.text?.count ?? 0 > 6 && phoneTextfield.text?.count ?? 0 > 7 && stavkaTextfield.text?.count ?? 0 > 2{
+        if innTextfield.text?.count ?? 0 > 7 && fioTextfield.text?.count ?? 0 > 10 && priceTextfield.text?.count ?? 0 > 5 && phoneTextfield.text?.count ?? 0 > 7 && stavkaTextfield.text?.count ?? 0 > 2{
             nextButton.alpha = 1
             nextButton.isEnabled = true
         }else{

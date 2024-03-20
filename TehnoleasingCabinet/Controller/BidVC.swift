@@ -52,13 +52,26 @@ class BidVC: UIViewController {
         
         
     }
-    
+    func loadApps() {
+        NetworkTehnoDB.shared.getAppsOrAgentsForPhone(parapms: "+79917678987") { result in
+            switch result {
+            case .success(let agent):
+                for item in agent {
+                    print("-------")
+                    print(item.appName)
+                }
+            case .failure(let error):
+                //self.present(VCReg, animated: true, completion: nil)
+                print("error")
+            }
+            
+        }
+    }
     func setViews(){
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(infoCollection)
     }
-    var rew: IndexPath?
     
     
 }
@@ -72,20 +85,20 @@ extension BidVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BidCell
         switch indexPath.row {
         case 0:
-            cell.setCellInfo(number: "123", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "На рассмотрении")
+            cell.setCellInfo(number: "100", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "На рассмотрении")
         case 1:
-            cell.setCellInfo(number: "123", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "В работе")
+            cell.setCellInfo(number: "120", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "В работе")
         case 2:
-            cell.setCellInfo(number: "123", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "Ожидание КК")
+            cell.setCellInfo(number: "130", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "Ожидание КК")
         case 3:
-            cell.setCellInfo(number: "123", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "Ожидание АВ")
+            cell.setCellInfo(number: "133", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "Ожидание АВ")
         case 4:
-            cell.setCellInfo(number: "123", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "Завершена")
+            cell.setCellInfo(number: "144", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "Завершена")
         case 5:
-            cell.setCellInfo(number: "123", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "Отказано")
+            cell.setCellInfo(number: "149", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "Отказано")
             cell.apiStatusLabel.text = "asdd"
         default:
-            cell.setCellInfo(number: "123", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "На рассмотрении")
+            cell.setCellInfo(number: "000", date: "12.15.2023", client: "Tehnoleasing", tariff: "Standart", summa: "10 000 000", status: "На рассмотрении")
         }
         
         return cell

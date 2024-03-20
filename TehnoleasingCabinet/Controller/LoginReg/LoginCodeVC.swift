@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CryptoKit
 
 class LoginCodeVC: UIViewController {
     //MARK: - Instans objects
@@ -64,11 +65,18 @@ class LoginCodeVC: UIViewController {
     
     @objc
        func buttonAction() {
-           let VCReg = TabController()
+           if UserDefaults.standard.bool(forKey: "isReg"){
+               regUser()
+               UserDefaults.setValue(false, forKey: "isReg")
+           }
+           let tabVC = TabController()
            nextButton.zoomInWithEasing()
-           VCReg.modalPresentationStyle = .fullScreen
-           VCReg.modalTransitionStyle = .coverVertical
-           present(VCReg, animated: true, completion: nil)
+           tabVC.modalPresentationStyle = .fullScreen
+           tabVC.modalTransitionStyle = .coverVertical
+           if smsCodeTextFiled.text == "11111"{
+               present(tabVC, animated: true, completion: nil)
+           }
+           //present(VCReg, animated: true, completion: nil)
 
        }
     private lazy var sendSMSTwo: UIButton = {
@@ -129,6 +137,37 @@ class LoginCodeVC: UIViewController {
         let seconds: Int = totalSeconds % 60
         let minutes: Int = (totalSeconds / 60) % 60
         return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+    func regUser() {
+        //0let inputString = "11111"
+        let inputData = Data(smsCodeTextFiled.text!.utf8)
+        let hashed = SHA256.hash(data: inputData)
+        //print(hashed)
+        let hashString = hashed.compactMap { String(format: "%02x", $0) }.joined()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        //print( hashString)
+        let parameters = [
+            "phone": "\(String(describing: UserDefaults.standard.string(forKey: "phone")!))",
+            "password": "\(hashString)",
+            "surname": "\(String(describing: UserDefaults.standard.string(forKey: "surname")!))",
+            "email": "\(String(describing: UserDefaults.standard.string(forKey: "email")!))",
+            "enter_code": "\(self.smsCodeTextFiled.text!.utf8)",
+            "enter_code_timer": "\(dateFormatter.string(from: NSDate() as Date))",
+            "amount_codes": "0",
+            "amount_codes_timer": "\(dateFormatter.string(from: NSDate() as Date))",
+            "created_at": "\(dateFormatter.string(from: NSDate() as Date))",
+            "status": "new"
+        ]
+        NetworkTehnoDB.shared.createAgents(parapms: parameters) { result in
+            switch result {
+            case .success(_):
+                print("Create")
+            case .failure(_):
+                print("Error")
+            }
+        }
     }
 
 }

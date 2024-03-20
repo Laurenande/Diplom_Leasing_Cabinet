@@ -454,11 +454,8 @@ extension AgentFromURVC: UIDocumentPickerDelegate{
 
 extension AgentFromURVC: UITextFieldDelegate{
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        
-        
         if textField == innTextfield{
             NetworkServideWithAF.shared.fetchData(parapms: innTextfield.text!) { result in
-                
                 switch result {
                 case .success(let data):
                     if !data.suggestions.isEmpty {
@@ -466,7 +463,6 @@ extension AgentFromURVC: UITextFieldDelegate{
                         self.dateAPILabel.text = self.convertDate(date: data.suggestions[0].data.state.registrationDate)
                         self.adressAPILabel.text = data.suggestions[0].data.address.value
                     }
-                    
                 case .failure(let error):
                     print(error)
                 }

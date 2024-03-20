@@ -17,7 +17,6 @@
 		872CD86D2AEA4317004C37D3 /* AgentFormIP2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872CD86C2AEA4317004C37D3 /* AgentFormIP2VC.swift */; };
 		872CD86F2AEA53E4004C37D3 /* AgentFromURVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872CD86E2AEA53E4004C37D3 /* AgentFromURVC.swift */; };
 		872CD8712AEA545D004C37D3 /* AgentFormUR2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872CD8702AEA545D004C37D3 /* AgentFormUR2VC.swift */; };
-		8739CCA62B18AFF700596185 /* NetworkPSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739CCA52B18AFF700596185 /* NetworkPSQL.swift */; };
 		874140202B0A1D7800D8BE76 /* PersonPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8741401F2B0A1D7800D8BE76 /* PersonPolicyVC.swift */; };
 		874140222B0CC6D600D8BE76 /* PolicyIpAndFisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874140212B0CC6D600D8BE76 /* PolicyIpAndFisVC.swift */; };
 		8754F8402AA4924D008F4596 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F83F2AA4924D008F4596 /* TextFieldExtension.swift */; };
@@ -30,6 +29,10 @@
 		87789A6D2ACEE62D002FDE0C /* BidStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */; };
 		87789A6F2ACEF3CF002FDE0C /* BidStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */; };
 		87800C3B2AB23FCD005AFBCF /* LoginCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800C3A2AB23FCD005AFBCF /* LoginCodeVC.swift */; };
+		8796D73B2B1C9BF500D27924 /* NetworkTehnoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8796D73A2B1C9BF500D27924 /* NetworkTehnoDB.swift */; };
+		8796D73D2B1C9C1800D27924 /* AgentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8796D73C2B1C9C1800D27924 /* AgentsModel.swift */; };
+		87A983042BA97C4600E550D1 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A983032BA97C4600E550D1 /* UserDefaults.swift */; };
+		87A983062BA9B68800E550D1 /* AgentsAppsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A983052BA9B68800E550D1 /* AgentsAppsModel.swift */; };
 		87B1CE142AA4CD5F002F72B9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B1CE132AA4CD5F002F72B9 /* CustomTextField.swift */; };
 		87B1CE162AA4CE8D002F72B9 /* FormLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B1CE152AA4CE8D002F72B9 /* FormLabel.swift */; };
 		87B1CE182AA4DFC5002F72B9 /* AskLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B1CE172AA4DFC5002F72B9 /* AskLabel.swift */; };
@@ -69,7 +72,6 @@
 		872CD86C2AEA4317004C37D3 /* AgentFormIP2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentFormIP2VC.swift; sourceTree = "<group>"; };
 		872CD86E2AEA53E4004C37D3 /* AgentFromURVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentFromURVC.swift; sourceTree = "<group>"; };
 		872CD8702AEA545D004C37D3 /* AgentFormUR2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentFormUR2VC.swift; sourceTree = "<group>"; };
-		8739CCA52B18AFF700596185 /* NetworkPSQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPSQL.swift; sourceTree = "<group>"; };
 		8741401F2B0A1D7800D8BE76 /* PersonPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPolicyVC.swift; sourceTree = "<group>"; };
 		874140212B0CC6D600D8BE76 /* PolicyIpAndFisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyIpAndFisVC.swift; sourceTree = "<group>"; };
 		8754F83F2AA4924D008F4596 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -81,6 +83,10 @@
 		87789A6C2ACEE62D002FDE0C /* BidStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidStep2VC.swift; sourceTree = "<group>"; };
 		87789A6E2ACEF3CF002FDE0C /* BidStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidStep3VC.swift; sourceTree = "<group>"; };
 		87800C3A2AB23FCD005AFBCF /* LoginCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCodeVC.swift; sourceTree = "<group>"; };
+		8796D73A2B1C9BF500D27924 /* NetworkTehnoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTehnoDB.swift; sourceTree = "<group>"; };
+		8796D73C2B1C9C1800D27924 /* AgentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsModel.swift; sourceTree = "<group>"; };
+		87A983032BA97C4600E550D1 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		87A983052BA9B68800E550D1 /* AgentsAppsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsAppsModel.swift; sourceTree = "<group>"; };
 		87B1CE132AA4CD5F002F72B9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		87B1CE152AA4CE8D002F72B9 /* FormLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabel.swift; sourceTree = "<group>"; };
 		87B1CE172AA4DFC5002F72B9 /* AskLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskLabel.swift; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				876B3CC62B1359D300B48E3F /* DaDataModel.swift */,
+				8796D73C2B1C9C1800D27924 /* AgentsModel.swift */,
+				87A983052BA9B68800E550D1 /* AgentsAppsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +183,7 @@
 		8706AB8D2A9FCCB2007D6DA4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8796D7392B1C9BD700D27924 /* Network */,
 				8741401E2B0A1D3400D8BE76 /* Policy */,
 				87789A6B2ACEE234002FDE0C /* LoginReg */,
 				87EE7B162AC7061A00161D9F /* Tariff */,
@@ -186,8 +195,6 @@
 				87DFE4D92AFA377D004ACC4D /* BidVC.swift */,
 				87D63F5E2B0F4B0E00583AD5 /* SettingsVC.swift */,
 				87D63F622B0F87E700583AD5 /* NotificationsVC.swift */,
-				876B3CC82B135A7400B48E3F /* NetworkServideWithAF.swift */,
-				8739CCA52B18AFF700596185 /* NetworkPSQL.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,6 +206,7 @@
 				8706AB772A9FBE9C007D6DA4 /* AppDelegate.swift */,
 				8706AB792A9FBE9C007D6DA4 /* SceneDelegate.swift */,
 				8706AB822A9FBE9D007D6DA4 /* LaunchScreen.storyboard */,
+				87A983032BA97C4600E550D1 /* UserDefaults.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -242,6 +250,15 @@
 				8754F8412AA4936F008F4596 /* RegVC.swift */,
 			);
 			path = LoginReg;
+			sourceTree = "<group>";
+		};
+		8796D7392B1C9BD700D27924 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				876B3CC82B135A7400B48E3F /* NetworkServideWithAF.swift */,
+				8796D73A2B1C9BF500D27924 /* NetworkTehnoDB.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		87D63F662B0F9DF700583AD5 /* TableCell */ = {
@@ -377,7 +394,6 @@
 				87EE7B152AC6BFC500161D9F /* TabController.swift in Sources */,
 				87789A6F2ACEF3CF002FDE0C /* BidStep3VC.swift in Sources */,
 				87DFE4DA2AFA377D004ACC4D /* BidVC.swift in Sources */,
-				8739CCA62B18AFF700596185 /* NetworkPSQL.swift in Sources */,
 				876B3CC92B135A7400B48E3F /* NetworkServideWithAF.swift in Sources */,
 				87B1CE1A2AA4F3C4002F72B9 /* TehnoBlueButton.swift in Sources */,
 				872CD86F2AEA53E4004C37D3 /* AgentFromURVC.swift in Sources */,
@@ -386,6 +402,7 @@
 				87B88F072AE8F53700D9D9A8 /* ButtonAnimation.swift in Sources */,
 				87D63F632B0F87E700583AD5 /* NotificationsVC.swift in Sources */,
 				87DFE4D62AF94368004ACC4D /* PayVC.swift in Sources */,
+				87A983042BA97C4600E550D1 /* UserDefaults.swift in Sources */,
 				87DFE4DC2AFA37BD004ACC4D /* BidCell.swift in Sources */,
 				8754F8422AA4936F008F4596 /* RegVC.swift in Sources */,
 				8706AB7C2A9FBE9C007D6DA4 /* ViewOnBorading.swift in Sources */,
@@ -393,7 +410,9 @@
 				87789A6A2ACD7FAE002FDE0C /* AgentFormPhysical.swift in Sources */,
 				872CD8712AEA545D004C37D3 /* AgentFormUR2VC.swift in Sources */,
 				87EE7B1E2ACC5B1E00161D9F /* NSMutableAttributedString.swift in Sources */,
+				8796D73B2B1C9BF500D27924 /* NetworkTehnoDB.swift in Sources */,
 				87D63F5F2B0F4B0E00583AD5 /* SettingsVC.swift in Sources */,
+				8796D73D2B1C9C1800D27924 /* AgentsModel.swift in Sources */,
 				87DFE4DE2AFA39B0004ACC4D /* BidSendSMS.swift in Sources */,
 				87D63F612B0F6B0700583AD5 /* SettingTableViewCell.swift in Sources */,
 				87D63F652B0F8AC200583AD5 /* SwitchTableViewCell.swift in Sources */,
@@ -408,6 +427,7 @@
 				874140222B0CC6D600D8BE76 /* PolicyIpAndFisVC.swift in Sources */,
 				87EE7B0F2AC6BE1B00161D9F /* AgentContractVC.swift in Sources */,
 				87DFE4D82AF94401004ACC4D /* PayCell.swift in Sources */,
+				87A983062BA9B68800E550D1 /* AgentsAppsModel.swift in Sources */,
 				87EA8F8A2AD421CE00331A32 /* BidStep4VC.swift in Sources */,
 				8706AB7A2A9FBE9C007D6DA4 /* SceneDelegate.swift in Sources */,
 				87B88F0B2AE952D600D9D9A8 /* AgentFromIPVC.swift in Sources */,

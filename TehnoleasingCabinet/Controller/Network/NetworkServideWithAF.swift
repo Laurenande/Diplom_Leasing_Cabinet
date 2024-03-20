@@ -20,9 +20,7 @@ class NetworkServideWithAF{
             "Accept": "application/json",
             "token": "ff166055839d5058ebe6df03943ca57d795737f8",
             "query": "\(parapms)"
-            
         ]
-        
         AF.request(url, method: .get, parameters: params ).responseDecodable(of: DaDataStruct.self) { response in
             guard let data = response.data else {
                 if let error = response.error{
@@ -38,3 +36,6 @@ class NetworkServideWithAF{
         }
     }
 }
+
+
+

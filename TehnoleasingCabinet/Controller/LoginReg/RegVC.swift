@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import CryptoKit
 
 class RegVC: UIViewController {
-
+    
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "logoText")
@@ -38,7 +39,7 @@ class RegVC: UIViewController {
     }()
     //Create form element
     private let formStack: UIStackView = {
-       let stack = UIStackView()
+        let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.spacing = 5
@@ -55,11 +56,11 @@ class RegVC: UIViewController {
     
     //Email element
     private let phoneLabel = FormLabel(text: "Телефон:")
-    private let phoneTextfield = CustomTextField(placeholder: "+7 (999) 999-99-99", keyboard: .number)
+    let phoneTextfield = CustomTextField(placeholder: "+7 (999) 999-99-99", keyboard: .number)
     
     //create ask check
     private let checkBoxStack: UIStackView = {
-       let stack = UIStackView()
+        let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 5
@@ -82,14 +83,14 @@ class RegVC: UIViewController {
     }()
     @objc func policyTap(_ sender: Any){
         let detailViewController = PolicyIpAndFisVC()
-            let nav = UINavigationController(rootViewController: detailViewController)
-            nav.modalPresentationStyle = .pageSheet
-            present(nav, animated: true, completion: nil)
-
+        let nav = UINavigationController(rootViewController: detailViewController)
+        nav.modalPresentationStyle = .pageSheet
+        present(nav, animated: true, completion: nil)
+        
     }
     //create ask check
     private let checkBoxStack2: UIStackView = {
-       let stack = UIStackView()
+        let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 5
@@ -115,10 +116,10 @@ class RegVC: UIViewController {
     
     @objc func soglashenieTap(_ sender: Any){
         let detailViewController = PersonPolicyVC()
-            let nav = UINavigationController(rootViewController: detailViewController)
-            nav.modalPresentationStyle = .pageSheet
-            present(nav, animated: true, completion: nil)
-
+        let nav = UINavigationController(rootViewController: detailViewController)
+        nav.modalPresentationStyle = .pageSheet
+        present(nav, animated: true, completion: nil)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,10 +133,22 @@ class RegVC: UIViewController {
         let VCSendSms = LoginCodeVC()
         sendKod.zoomInWithEasing()
         VCSendSms.modalPresentationStyle = .fullScreen
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        //print(dateFormatter.string(from: NSDate() as Date))
+        let new = phoneTextfield.text?.replacingOccurrences(of: " (", with: "")
+        let new2 = new?.replacingOccurrences(of: ") ", with: "")
+        let new3 = new2?.replacingOccurrences(of: "-", with: "")
+        UserDefaults.standard.set(self.fioTextfield.text!, forKey: "surname")
+        UserDefaults.standard.set(self.mailTextfield.text!, forKey: "email")
+        UserDefaults.standard.set(new3!, forKey: "phone")
+        UserDefaults.standard.set(true, forKey: "isReg")
         show(VCSendSms, sender: self)
     }
     
-
+    func regNewAgent(){
+        
+    }
 }
 
 
@@ -163,7 +176,7 @@ extension RegVC{
         checkBoxStack.addArrangedSubview(agreeLabel)
         checkBoxStack2.addArrangedSubview(checkBox2)
         checkBoxStack2.addArrangedSubview(agreeLabel2)
-
+        
     }
 }
 
@@ -209,25 +222,32 @@ extension RegVC{
                                                                  action: #selector(dismissMyKeyboard))
         //Add this tap gesture recognizer to the parent view
         view.addGestureRecognizer(tap)
-        }
+    }
     @objc func dismissMyKeyboard(){
         //endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
         //In short- Dismiss the active keyboard.
         view.endEditing(true)
-     }
+    }
     
 }
 extension RegVC: UITextFieldDelegate{
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-
-        if fioTextfield.text?.count ?? 0 > 7 && phoneTextfield.text?.count ?? 0 > 8 {
-            sendKod.alpha = 1
-            sendKod.isEnabled = true
+        
+        if fioTextfield.text?.count ?? 0 > 4 && fioTextfield.text?.count ?? 0 < 60 && phoneTextfield.text?.count ?? 0 > 8 {
+            if mailTextfield.text?.count ?? 0 < 128{
+                sendKod.alpha = 1
+                sendKod.isEnabled = true
+            } else {
+                let alert = UIAlertController(title: "Ошибка почты", message: "Данная почта слишком длинная, используйте более короткую почту.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+            }
         }else{
             sendKod.alpha = 0.5
             sendKod.isEnabled = false
         }
+        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -257,5 +277,5 @@ extension RegVC: UITextFieldDelegate{
         return result
     }
     
-   
+    
 }
