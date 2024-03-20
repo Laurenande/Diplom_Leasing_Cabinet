@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BidVC: UIViewController {
+class BidVC: UIViewController, UISearchControllerDelegate {
     private var infoCollection: UICollectionView = {
         let lay = UICollectionViewFlowLayout()
         lay.scrollDirection = .vertical
@@ -21,12 +21,16 @@ class BidVC: UIViewController {
     }()
     
     private var appsAgentData: [Apps]?
-    
+    var searchText = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         loadApps()
         navigationItem.title = "Заявки"
         navigationController?.navigationBar.prefersLargeTitles = true
+        let search = UISearchController(searchResultsController: nil)
+        search.delegate = self
+        search.searchBar.delegate = self
+        self.navigationItem.searchController = search
         view.backgroundColor = .systemGray6
         infoCollection.dataSource = self
         infoCollection.delegate = self
@@ -131,6 +135,50 @@ extension BidVC{
             infoCollection.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             
         ])
+    }
+}
+//MARK: - SearchBar
+extension BidVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Обновляем searchText при каждом изменении текста в строке поиска
+        self.searchText = searchText
+        // Фильтруем данные в соответствии с введенным текстом
+        filterData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        // Очищаем строку поиска и сбрасываем фильтрацию
+        searchBar.text = ""
+        searchText = ""
+        // Восстанавливаем исходные данные
+        resetData()
+    }
+    
+    func resetData() {
+        // Восстанавливаем исходные данные
+        loadApps()
+    }
+    
+    func filterData() {
+        // Если searchText пустой, восстанавливаем исходные данные
+        guard !searchText.isEmpty else {
+            loadApps()
+            return
+        }
+        
+        // Фильтруем данные по searchText
+        let filteredData = appsAgentData?.filter { app in
+            // Фильтруем по номеру, компании, статусу и т.д. в соответствии с вашими требованиями
+            return app.appNum.lowercased().contains(searchText.lowercased()) ||
+                   app.appCompany.lowercased().contains(searchText.lowercased()) ||
+                   app.appStatus.lowercased().contains(searchText.lowercased())
+        }
+        
+        // Обновляем коллекцию с отфильтрованными данными
+        if let filteredData = filteredData {
+            appsAgentData = filteredData
+            infoCollection.reloadData()
+        }
     }
 }
 
