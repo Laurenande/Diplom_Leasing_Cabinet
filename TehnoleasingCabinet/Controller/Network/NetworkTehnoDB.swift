@@ -70,4 +70,26 @@ class NetworkTehnoDB{
             complition(.success(daData))
         }
     }
+    
+    func createAgentsContract(parapms: Parameters, complition: @escaping (Result<Agents, Error>) -> ()){
+        
+        let url = "http://10.211.55.5:3003/api/add/concract/pe"
+        
+        //Передаваемый параметры
+        let params: Parameters = parapms
+        print(params)
+        AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                guard let data = response.data else {
+                    if let error = response.error{
+                        complition(.failure(error))
+                        print(error)
+                    }
+                    print("lox")
+                    return
+                    
+                }
+                
+            }
+    }
 }

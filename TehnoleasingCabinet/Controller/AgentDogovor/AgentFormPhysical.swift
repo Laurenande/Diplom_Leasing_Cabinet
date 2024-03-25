@@ -174,6 +174,41 @@ class AgentFormPhysical: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func postContractPe() {
+        let phoneCache = UserDefaults.standard.string(forKey: "phone")!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let parameters = [
+            "phone": phoneCache,
+            "type": "Физическое Лицо",
+            "fio": "\(String(describing: fioTextfield.text))",
+            "inn": "\(String(describing: innTextfield.text))",
+            "snils": "\(String(describing: snilsTextfield.text))",
+            "pass_ser_num": "\(String(describing: pasportTextfield.text))",
+            "pass_date": "\(String(describing: datePasportTextfield.text))",
+            "pass_issue": "\(String(describing: byPasportTextfield.text))",
+            "born_date": "\(String(describing: birthdayTextfield.text))",
+            "born_addr": "\(String(describing: placeBirthTextfield.text))",
+            "reg_addr": "\(String(describing: adressTextfield.text))",
+            "pass_2_3": "test",
+            "pass_4_5": "test",
+            "payment_account": "\(String(describing: accountTextfield.text))",
+            "bik_bank": "\(String(describing: bikBankTextfield.text))",
+            "notification": "test",
+            "contract_status": "test",
+            "created_at": "\(dateFormatter.string(from: NSDate() as Date))"
+        ]
+        NetworkTehnoDB.shared.createAgentsContract(parapms: parameters) { result in
+            print("loxbd")
+            switch result {
+            case .success(_):
+                print("Create")
+            case .failure(_):
+                print("Error")
+            }
+        }
+    }
+    
     func openDocumentPicker(tag: Int) {
         let supportedTypes: [UTType] = [UTType.pdf]
         let pickerViewController = UIDocumentPickerViewController(forOpeningContentTypes: supportedTypes, asCopy: true)

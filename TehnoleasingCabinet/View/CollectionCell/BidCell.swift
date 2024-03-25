@@ -20,11 +20,11 @@ enum colorCell {
 class BidCell: UICollectionViewCell {
     
     let numberLabel = BidLabel(text: "Номер №:")
-    let dateLabel = BidLabel(text: "Дата:")
+    let dateLabel = BidLabel(text: "Дата создания:")
     let clientLabel = BidLabel(text: "Лизингополучатель:")
     let summaLabel = BidLabel(text: "Сумма Фин-вания:")
     let agentComLabel = BidLabel(text: "Агентская ком.:")
-    let statusLabel = BidLabel(text: "Статус выплат:")
+    let statusLabel = BidLabel(text: "Статус:")
     
     let apiNumberLabel = ApiBidLabel(text: "2456457")
     let apiDateLabel =  ApiBidLabel(text: "12.12.2023")

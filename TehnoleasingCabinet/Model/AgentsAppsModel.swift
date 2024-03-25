@@ -8,20 +8,20 @@
 import Foundation
 
 struct Apps: Codable {
-    let id, phone, appNum, appGroup: String
-    let appType, appName, appAdvance: String
+    let id, phone, appNum, appGroup: String?
+    let appType, appName, appAdvance: String?
     let appTerm: String?
-    let appCompany, appCost, appComission, appContactName: String
-    let appContactPhone, appGuarantor, appNote, appE: String
+    let appCompany, appCost, appComission, appContactName: String?
+    let appContactPhone, appGuarantor, appNote, appE: String?
     let appUsed: String
     let appBalance, appCommercial: String?
-    let tariffRate, appStatus: String
+    let tariffRate, appStatus: String?
     let payAccrualDate: String?
-    let payStatus, payMentDate, createdAt: String
+    let payStatus, payMentDate, createdAt: String?
     let updatedAt: String?
-    let appReturnable, pinned: String
+    let appReturnable, pinned: String?
     let pinnedAdditional, appAdditionalDocument, appPublicProcurement: String?
-    let appFormat: String
+    let appFormat: String?
     let appCustomBody, email: String?
 
     enum CodingKeys: String, CodingKey {

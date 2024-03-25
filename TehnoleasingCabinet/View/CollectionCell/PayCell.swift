@@ -97,6 +97,33 @@ class PayCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setCellInfo(number: String, client: String, tariff: String, summa: String, comission: String, status: String, date: String){
+        apiNumberLabel.text = number
+        apiClientLabel.text = client
+        apiTariffLabel.text = tariff
+        apiSummaLabel.text = summa
+        apiAgentComLabel.text = comission
+        apiStatusLabel.text = status
+        apiDateLabel.text = date
+        
+        switch status {
+        case "На рассмотрении":
+            backgroundColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1) //
+        case "В работе":
+            backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        case "Ожидание КК":
+            backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        case "Ожидание АВ":
+            backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1)
+        case "Завершена":
+            backgroundColor = UIColor(red: 88/255, green: 86/255, blue: 214/255, alpha: 1)
+        case "Не назначена":
+            backgroundColor = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1)
+        default:
+            backgroundColor = .systemGray6
+        }
+    }
     ///The function configures constraints.
     func setConstraints() {
         NSLayoutConstraint.activate([
